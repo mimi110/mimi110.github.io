@@ -19,45 +19,22 @@ header {
   top: 0; 
 }
 
-.logo {
-  position: fixed;
-  top: 5px;
-  left: 20px; 
-  display: flex;
+.logo-header {
+  position: relative; 
 }
-
-/* Navigation */ 
-
-
-/*.logo {
-    font-size: 25px;
-    padding: 30px 10px;
-    text-align: center;
-    list-style-type: none;
-    color: #333;
-    text-decoration: none;
-    border-radius: 50px;
-    transition: border-bottom 0.2s;
-}
-
-.logo:hover {
-    color: #ccc;
-}*/
 
 .logo {
-    top: 20px;
-    left: 10px; 
-    width: 80px; 
-    height: 80px; 
-    text-align: center;
-    list-style-type: none;
-    background-image: url('img/miffy.png'); 
-    background-size: cover; 
-    color: transparent;
-    text-decoration: none;
-    border-radius: 100%; 
-    transition: border-bottom 0.3s;
+  position: absolute; 
+  top: 20px; 
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px; 
+  height: 80px; 
+  background-image: url('img/miffy.png'); 
+  background-size: cover; 
+  border-radius: 50%; 
 }
+
 
 
 
