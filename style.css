@@ -55,7 +55,7 @@ nav {
     list-style-type: none;
     text-decoration: none;
     display: inline-block;
-    background-color: #ffccd2;
+    background-color: #a4abb8;
     color: #333;
     border-radius: 50px; 
     font-size: 16px;
@@ -64,7 +64,7 @@ nav {
 }
 
 .nav:hover {
-    background-color: #ffb3ba;
+    background-color: #a0a4ae;
 }
 
 
