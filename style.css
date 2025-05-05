@@ -13,6 +13,46 @@ body, html {
   color: #222;
 }
 
+/* Project Header  */
+
+.project-details {
+  margin-bottom: 16px;
+}
+
+.project-details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.project-details summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-details summary h2 {
+  margin-bottom: -1px; 
+}
+
+/* Project Title Hover */
+.clickable-title h2 {
+  transition: color 0.3s ease, transform 0.1s ease;
+}
+
+.clickable-title:hover h2 {
+  color: #1a2e66;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-details[open] .clickable-title h2 {
+  transform: scale(1.03);
+  color: #162653;
+}
+
+.clickable-title h2 {
+  transition: color 0.3s ease, transform 0.1s ease;
+  user-select: none; 
+}
+
 /* Header */
 header {
   top: 0;
