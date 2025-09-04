@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,127 +7,110 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
-
   <header>
-
     <div class="logo-header">
       <a href="/" class="logo"></a>
-      </div>
-
-
-
+    </div>
   </header>
 
-
-
-  
   <section id="project">
     <h1>Projects</h1>
 
-<div class="box">
+    <div class="box">
       <div class="project">
         <a href="#">
-            <img src="img/Food Tracker Logging.jpg" alt="" onclick="enlargeImage(this)">
+          <img src="img/Food Tracker Logging.jpg" alt="" onclick="enlargeImage(this)">
         </a>
-       </div>
-       
-       <details class="project-details">
-        <summary class="clickable-title"><h2>Food Tracker</h2></summary>
+      </div>
+
+      <!-- STATIC (not clickable) -->
+      <div class="project-details">
+        <h2>Food Tracker</h2>
         <p>
-          Tracks daily meals by type and date in an iOS app built with React Native and Expo Go. 
+          Tracks daily meals by type and date in an iOS app built with React Native and Expo Go.
           Syncs entries and user data in real-time with Supabase backend.
-         <!-- <br><br><i>Note: A demo video showcasing the app’s features will be available here soon.</i> -->
-      </details> 
+          <!-- <br><br><i>Note: A demo video showcasing the app’s features will be available here soon.</i> -->
+        </p>
+      </div>
 
       <nav>
         <a href="https://drive.google.com/file/d/1OOZ5GRvk7pFZZpWM03qAFR8n3IRRHxT_/view?usp=sharing" class="nav">Demo</a>
-  
-        </nav>
-  
-      </div>
-
-    <div class="box">
-      <div class="project">
-        <a href="#">
-            <img src="img/Data Automation.png" alt="" onclick="enlargeImage(this)">
-        </a>
-       </div>
-       
-       <details class="project-details">
-        <summary class="clickable-title"><h2>Data Automation</h2></summary>
-        <p>
-      Automates Excel data processing using Python Pandas, with a FastAPI backend and a React frontend.  
-      Simplifies complex headers and merges defect and shipment data into a clean, organized format for easier analysis.  
-      <!-- <br><br><i>Currently improving the web app to support more types of data automation.</i> -->
-        </p>
-      </details>
-      
-      <nav>
-        <a href="https://drive.google.com/file/d/1366TOXXBCFYhuQbvlSa7igBh8yoYWy78/view?usp=sharinghttps://drive.google.com/file/d/1OOZ5GRvk7pFZZpWM03qAFR8n3IRRHxT_/view?usp=sharing" class="nav">Demo</a>
-        <!-- <a href="https://colab.research.google.com/drive/1xSTjXpaC7KORXnxM2nH6wUgKGGn8kMbC?usp=sharing" class="nav">Code</a> -->
-        <a href="https://drive.google.com/drive/folders/1e693ASVDgutEyYPyVCd3VxFa_B3XkgMF?usp=drive_link" class="nav">Files</a>
-  
-        </nav>
-  
-      </div>
-
-    <!-- <div class="box">
-      <div class="project">
-        <a href="#">
-            <img src="img/Mimi Music Bot.PNG" alt="" onclick="enlargeImage(this)">
-        </a>
-       </div>
-      <details class="project-details">
-      <summary class="clickable-title"><h2>Discord Music Bot</h2></summary>
-      <p>Developed a Python Discord Music Bot for seamless playback control within servers, featuring play, stop, resume, join and disconnect, enhancing the user audio experience with simple commands.</p>
-    </details>
-
-      <nav>
-         <a href="https://drive.google.com/file/d/11ni0YEpbaHmSIQqKB8hQj9NIfYt0OmQK/view?usp=drive_link" class="nav">Demo</a>
-        <a href="https://github.com/mimi110/Mimi-Music-Bot" class="nav">Code</a>
-
-        </nav>
-
-      </div> -->
-
-    <div class="box">
-    <div class="project">
-      <a href="#">
-          <img src="img/CatMatch AI.png" alt="" onclick="enlargeImage(this)">
-      </a>
-     </div>
-    <details class="project-details">
-    <summary class="clickable-title"><h2>CatMatch AI</h2></summary>
-    <p>Built an AI-powered product recommendation chatbot using React, Tailwind CSS, and Supabase to answer cat care questions and suggest personalized products.</p>
-  </details>
-
-    <nav>
-       <a href="https://catmatchai.netlify.app/" class="nav">Demo</a>
-      <!-- <a href="https://github.com/mimi110/Valorant-Randomizer" class="nav">Code</a> -->
-
       </nav>
-
     </div>
 
+    <div class="box">
+      <div class="project">
+        <a href="#">
+          <img src="img/Data Automation.png" alt="" onclick="enlargeImage(this)">
+        </a>
+      </div>
 
+      <!-- STATIC (not clickable) -->
+      <div class="project-details">
+        <h2>Data Automation</h2>
+        <p>
+          Automates Excel data processing using Python Pandas, with a FastAPI backend and a React frontend.
+          Simplifies complex headers and merges defect and shipment data into a clean, organized format for easier analysis.
+          <!-- <br><br><i>Currently improving the web app to support more types of data automation.</i> -->
+        </p>
+      </div>
 
+      <nav>
+        <!-- fixed: removed accidental double-URL -->
+        <a href="https://drive.google.com/file/d/1366TOXXBCFYhuQbvlSa7igBh8yoYWy78/view?usp=sharing" class="nav">Demo</a>
+        <!-- <a href="https://colab.research.google.com/drive/1xSTjXpaC7KORXnxM2nH6wUgKGGn8kMbC?usp=sharing" class="nav">Code</a> -->
+        <a href="https://drive.google.com/drive/folders/1e693ASVDgutEyYPyVCd3VxFa_B3XkgMF?usp=drive_link" class="nav">Files</a>
+      </nav>
+    </div>
+
+    <!--
+    <div class="box">
+      <div class="project">
+        <a href="#">
+          <img src="img/Mimi Music Bot.PNG" alt="" onclick="enlargeImage(this)">
+        </a>
+      </div>
+      <div class="project-details">
+        <h2>Discord Music Bot</h2>
+        <p>
+          Developed a Python Discord Music Bot for seamless playback control within servers, featuring play,
+          stop, resume, join and disconnect, enhancing the user audio experience with simple commands.
+        </p>
+      </div>
+      <nav>
+        <a href="https://drive.google.com/file/d/11ni0YEpbaHmSIQqKB8hQj9NIfYt0OmQK/view?usp=drive_link" class="nav">Demo</a>
+        <a href="https://github.com/mimi110/Mimi-Music-Bot" class="nav">Code</a>
+      </nav>
+    </div>
+    -->
+
+    <div class="box">
+      <div class="project">
+        <a href="#">
+          <img src="img/CatMatch AI.png" alt="" onclick="enlargeImage(this)">
+        </a>
+      </div>
+
+      <!-- STATIC (not clickable) -->
+      <div class="project-details">
+        <h2>CatMatch AI</h2>
+        <p>
+          Built an AI-powered product recommendation chatbot using React, Tailwind CSS, and Supabase
+          to answer cat care questions and suggest personalized products.
+        </p>
+      </div>
+
+      <nav>
+        <a href="https://catmatchai.netlify.app/" class="nav">Demo</a>
+        <!-- <a href="https://github.com/mimi110/Valorant-Randomizer" class="nav">Code</a> -->
+      </nav>
+    </div>
   </section>
 
-
-
-
-
   <footer class="footer">
-      <p>@2024 Mimi Nguyen</p>
+    <p>@2024 Mimi Nguyen</p>
   </footer>
-
-
-
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
