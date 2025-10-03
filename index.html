@@ -1,118 +1,51 @@
 <!DOCTYPE html>
-
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Mimi Nguyen</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
   <link rel="icon" type="image/png" href="img/miffy.png">
+  <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <header>
-
-    <div class="logo-header">
-    <a href="/" class="logo"></a>
-    </div>
-
-  
-
+  <!-- Same nav as About; 'Home' is active -->
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav active">Home</a>
+      <a href="about.html" class="nav">About</a>
+      <a href="project.html" class="nav">Projects</a>
+    </nav>
   </header>
 
+  <main id="main">
+    <section id="intro" class="hero section">
+      <h1 class="hero__title">mimi nguyen</h1>
+      <h2 class="hero__subtitle">
+        I am a <span class="typed-text"></span><span class="cursor">&nbsp;</span>
+      </h2>
+    </section>
+  </main>
 
-
-      <section id="intro">
- 
-
-        
-        <h1>Mimi Nguyen</h1>
-          <h2>I am a <span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
-
-        <nav>
-           
-            <a href="#about" class="nav">About</a>
-            <a href="project.html" class="nav">Projects</a>
-            <!-- <a href="https://drive.google.com/file/d/1ny1sSdOuqnRKp2RH-kH4dsgAhQPbn4bJ/view?usp=sharing" class="nav">Resume</a> -->
-            <a href="file/Mimi Nguyen Resume.pdf" class="nav" target="_blank" rel="noopener noreferrer">Resume</a>
-
-        </nav>
-
-  
-  </section>
-
-
-  <section id="about">
-    <h1>About Me</h1>
-    
-    <div class="box">
-      <div class="about">
-        <!-- <img src="img/Mimi.jpg" alt=""> -->
-        
-       </div>
-       <p>
-        Hi, I’m Mimi Nguyen! I’m a computer science major who loves building efficient, user-friendly software from web apps to AI-powered tools. I’m always excited to solve problems and learn something new!
-      </p>
-      <br>
-      <p>What I know:</p>
-      <br>
-      <p class="icon-line">
-        <span class="tooltip">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" width="24" />
-          <span class="tooltiptext">Python</span>
-        </span>
-        <span class="tooltip">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL" width="24" />
-          <span class="tooltiptext">SQL</span>
-        </span>
-        <span class="tooltip">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" width="24" />
-          <span class="tooltiptext">JavaScript</span>
-        </span>
-        <span class="tooltip">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" width="24" />
-          <span class="tooltiptext">C++</span>
-        </span>
-        <span class="tooltip">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" width="24" />
-          <span class="tooltiptext">HTML</span>
-        </span>
-        <span class="tooltip">
-          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" width="24" />
-          <span class="tooltiptext">CSS</span>
-        </span>
-      </p>
-      
-      
-      
-      <nav>
-       <a href="mailto:miminguyen173@gmail.com" class="nav">Contact</a>
-       <a href="https://github.com/mimi110" class="nav">GitHub</a>
-       <a href="https://www.linkedin.com/in/mimi-nguyen-647a5724a/" class="nav">LinkedIn</a>
-
-      </nav>
-      </div>
-
+<footer class="footer">
+  <p class="footer__greeting">Thanks for stopping by!</p>
   
 
-  </section>
+  <nav class="footer__links" aria-label="footer links">
+    <a href="mailto:miminguyen173@gmail.com" class="nav nav--ghost">Email</a>
+    <a href="https://github.com/mimi110" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">GitHub</a>
+    <a href="https://www.linkedin.com/in/mimi-nguyen-647a5724a/" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">LinkedIn</a>
+    <!-- Recommended: keep this -->
+    <a href="file/Mimi Nguyen Resume.pdf" class="nav nav--ghost" target="_blank" rel="noopener noreferrer">Resume</a>
+  </nav>
 
-
-
-
-
-  <footer class="footer">
-      <p>@2024 Mimi Nguyen</p>
-  </footer>
-
-
+  <p class="footer__copy">© 2025 Mimi Nguyen</p>
+</footer>
 
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
-
