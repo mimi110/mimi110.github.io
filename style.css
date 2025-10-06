@@ -1,437 +1,292 @@
 /* =========================
    Base / Reset
    ========================= */
-* { 
-  box-sizing: border-box; 
-  -webkit-font-smoothing: antialiased; 
-  -moz-osx-font-smoothing: grayscale; 
-}
-html, body { 
-  margin: 0; 
-  padding: 0; 
-  height: 100%; 
-}
-img { 
-  max-width: 100%; 
-  height: auto; 
-  display: block; 
-}
+*{box-sizing:border-box;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+html,body{margin:0;padding:0;height:100%}
+img{max-width:100%;height:auto;display:block}
 
 /* =========================
    Tokens
    ========================= */
-:root {
-  --ink:#333;                            /* main text */
-  --ink-light:#555;                      /* secondary text */
-  --pastel-pink:rgba(255,182,193,1);     /* pink accent */
-  --sky-blue:rgba(173,216,230,1);        /* blue accent */
-  --glass:rgba(255,255,255,.5);          /* glass background */
-  --glass-hover:rgba(255,255,255,.7);    /* brighter glass */
-  --gradient:linear-gradient(90deg, var(--pastel-pink), var(--sky-blue));
+:root{
+  --ink:#333;                    /* main text */
+  --ink-light:#555;              /* secondary text */
+  --pastel-pink:rgb(255,182,193);
+  --sky-blue:rgb(173,216,230);
+  --glass:rgba(255,255,255,.5);
+  --glass-hover:rgba(255,255,255,.7);
+  --gradient:linear-gradient(90deg,var(--pastel-pink),var(--sky-blue));
 }
 
 /* =========================
    Global
    ========================= */
-html, body {
-  font-family:'Poppins', sans-serif;
+html,body{
+  font-family:'Poppins',sans-serif;
   color:var(--ink);
-  background: #f2f2f2 url("img/Background .png") center / cover fixed no-repeat;
-  display:flex;
-  flex-direction:column;
+  /* If you keep the space in the filename, URL-encode it: "Background%20.png" */
+  background:#f2f2f2 url("img/Background%20.png") center/cover fixed no-repeat;
+  display:flex;flex-direction:column;
+  scroll-behavior:smooth;
 }
+
+/* Provide offset when jumping to anchors (if you add a sticky header later) */
+[id]{scroll-margin-top:80px}
 
 /* =========================
    Header / Navigation
    ========================= */
-.site-header {
-  padding: 40px 0 20px;   /* nav sits a bit lower */
-  display: flex;
-  justify-content: center;
+.site-header{padding:40px 0 20px;display:flex;justify-content:center}
+.main-nav{display:flex;gap:16px;flex-wrap:wrap;justify-content:center;align-items:center}
+.main-nav .nav{
+  font-weight:500;padding:10px 18px;text-decoration:none;
+  background:var(--glass);border:1px solid rgba(0,0,0,.12);border-radius:24px;
+  font-size:15px;color:var(--ink);
+  transition:background .3s ease,transform .15s ease,color .3s ease, box-shadow .3s ease, border-color .3s ease;
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
 }
-
-.main-nav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+.main-nav .nav:hover,
+.main-nav .nav:focus-visible{
+  background:rgba(255,255,255,.8);
+  box-shadow:0 8px 28px rgba(0,0,0,.12);
+  border:1px solid rgba(0,0,0,.14);
+  color:var(--ink);filter:saturate(1.03);
+  outline:none;
 }
-
-.main-nav .nav {
-  font-weight: 500;
-  padding: 10px 18px;
-  text-decoration: none;
-  background: var(--glass);
-  border: 1px solid rgba(0,0,0,.12);
-  border-radius: 24px;
-  font-size: 15px;
-  color: var(--ink);
-  transition: background .3s ease, transform .15s ease, color .3s ease;
-  box-shadow: 0 2px 6px rgba(0,0,0,.06);
-}
-
-.main-nav .nav:hover{
-  background: rgba(255,255,255,.8);
-  box-shadow: 0 8px 28px rgba(0,0,0,.12);
-  border: 1px solid rgba(0,0,0,.14);
-  color: var(--ink);
-  filter: saturate(1.03);
-}
-
-
-.main-nav .nav.active {
-  background: var(--gradient);
-  color: #fff;
-  border: none;
-  filter: brightness(1.05);
-}
+.main-nav .nav.active{background:var(--gradient);color:#fff;border:none;filter:brightness(1.05)}
 
 /* =========================
    Main Layout
    ========================= */
-#main {
-  flex: 1 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-}
+#main{flex:1 0 auto;display:flex;justify-content:center;align-items:center;padding:20px}
 
 /* =========================
-   About
+   About / Shared Card Styles
    ========================= */
-#about {
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap: 20px;
-  text-align:center;
+#about{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
+.about-title{
+  margin:0;font-weight:700;text-transform:lowercase;
+  font-size:clamp(36px,6vw,72px);letter-spacing:1.5px;
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  -webkit-text-stroke:1px rgba(0,0,0,.12);
 }
-
-.about-title {
-  margin: 0;
-  font-weight: 700;
-  text-transform: lowercase;
-  font-size: clamp(36px, 6vw, 72px);
-  letter-spacing: 1.5px;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-text-stroke: 1px rgba(0,0,0,.12);
+.about-subtitle{margin-top:6px;font-weight:600;color:var(--ink)}
+.about-card{
+  max-width:720px;padding:24px 28px;background:var(--glass);
+  border:1px solid rgba(255,182,193,.4);border-radius:20px;text-align:center;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
 }
-
-.about-card {
-  max-width: 720px;
-  padding: 24px 28px;
-  background: var(--glass);
-  border: 1px solid rgba(255,182,193,.4);
-  border-radius: 20px;
-  text-align: center;
-}
-
-.about-card p {
-  margin: 0 0 14px;
-  font-size: clamp(15px, 1.6vw, 17px);
-  color: var(--ink);
-  line-height: 1.55;
-}
-
-.about-subtitle {
-  margin-top: 6px;
-  font-weight: 600;
-  color: var(--ink);
-}
+.about-card p{margin:0 0 14px;font-size:clamp(15px,1.6vw,17px);color:var(--ink);line-height:1.55}
 
 /* =========================
    Footer
    ========================= */
-footer { text-align:center; }
-
-.footer {
-  border-top:1px solid rgba(0,0,0,.12);
-  padding:14px 0 16px;
-  background: var(--glass);              /* uses your token */
-  backdrop-filter: blur(6px);
-  line-height: 1.4;
+footer{text-align:center}
+.footer{
+  border-top:1px solid rgba(0,0,0,.12);padding:14px 0 16px;background:var(--glass);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);line-height:1.4;
 }
-
-/* Footer greeting — matches site aesthetic (glassy + pastel) */
 .footer__greeting{
-  position: relative;
-  display: inline-block;
-  margin: 0 0 6px;
-  font-size: 13px;
-  color: var(--ink);
-  letter-spacing: .2px;
-  text-transform: lowercase;
+  position:relative;display:inline-block;margin:0 0 6px;font-size:13px;color:var(--ink);
+  letter-spacing:.2px;text-transform:lowercase;
 }
-
-/* gradient decorative marks (pink → sky) */
-.footer__greeting::before,
-.footer__greeting::after{
-  content: var(--footer-mark, "☁︎");
-  margin: 0 .45rem;
-  font-weight: 700;
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  line-height: 1;
+.footer__greeting::before,.footer__greeting::after{
+  content:var(--footer-mark,"☁︎");margin:0 .45rem;font-weight:700;background:var(--gradient);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1;
 }
-
-
-.footer__links {
-  display: flex;
-  gap: 14px;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  text-transform: lowercase;
-  text-transform: lowercase;
-  margin: 6px 0;
+.footer__links{
+  display:flex;gap:14px;justify-content:center;align-items:center;flex-wrap:wrap;
+  text-transform:lowercase;margin:6px 0;
 }
-
-/* subtle text links that pick up your gradient on hover */
-.footer__links .nav {
-  background: transparent;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-  color: var(--ink);
-  font-size: 13px;
-  margin: 0;
-  text-decoration: none;
-  transition: color .2s ease, background .3s ease;
+.footer__links .nav{
+  background:transparent;padding:0;border-radius:0;box-shadow:none;color:var(--ink);
+  font-size:13px;margin:0;text-decoration:none;transition:color .2s ease,background .3s ease;
 }
-.footer__links .nav:hover,
-.footer__links .nav:focus-visible {
-  background: var(--gradient);           /* pink → sky */
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+.footer__links .nav:hover,.footer__links .nav:focus-visible{
+  background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  outline:none;
 }
-
-.footer__availability {
-  margin: 4px 0 0;
-  font-size: 12px;
-  color: var(--ink);
-  opacity: .8;
-}
-
-.footer__copy {
-  margin: 6px 0 0;
-  font-size: 11px;
-  color: var(--ink);
-}
-
-
+.footer__availability{margin:4px 0 0;font-size:12px;color:var(--ink);opacity:.8}
+.footer__copy{margin:6px 0 0;font-size:11px;color:var(--ink)}
 
 /* =========================
    Tooltips
    ========================= */
-.icon-line { 
-  display:flex; 
-  justify-content:center; 
-  gap:10px; 
-  margin-top:10px; 
-}
-.tooltip { position:relative; display:inline-block; }
-.tooltip img { vertical-align:middle; cursor:pointer; }
-.tooltiptext {
-  visibility:hidden; 
-  opacity:0; 
-  transition:opacity .25s;
-  position:absolute; 
-  bottom:130%; 
-  left:50%; 
-  transform:translateX(-50%);
-  white-space:nowrap; 
-  z-index:2;
-  background:#333; 
-  color:#fff;
-  padding:4px 8px; 
-  border-radius:6px; 
-  font-size:12px;
+.icon-line{display:flex;justify-content:center;gap:10px;margin-top:10px}
+.tooltip{position:relative;display:inline-block}
+.tooltip img{vertical-align:middle;cursor:pointer}
+.tooltiptext{
+  visibility:hidden;opacity:0;transition:opacity .25s;
+  position:absolute;bottom:130%;left:50%;transform:translateX(-50%);
+  white-space:nowrap;z-index:2;background:#333;color:#fff;padding:4px 8px;border-radius:6px;font-size:12px;
   pointer-events:none;
 }
-.tooltip:hover .tooltiptext { visibility:visible; opacity:1; }
+.tooltip:hover .tooltiptext,
+.tooltip:focus-within .tooltiptext{visibility:visible;opacity:1}
 
 /* =========================
    Responsive
    ========================= */
-@media (max-width:640px) {
-  #main { padding-top:24px; }
-  .about-title { letter-spacing:1px; }
-  .footer { padding:12px 0; }
+@media (max-width:640px){
+  #main{padding-top:24px}
+  .about-title{letter-spacing:1px}
+  .footer{padding:12px 0}
 }
 
-/* ==== HERO (Home) ==== */
-.hero{
-   display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap: 20px;
-  text-align:center;
-}
-
-/* Bigger than About, lowercase, gradient fill + SAME stroke color */
+/* =========================
+   Home (Hero)
+   ========================= */
+.hero{display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center}
 .hero__title{
-  margin:0;
-  text-transform: lowercase;
-  font-weight:800;
-  font-size: clamp(56px, 12vw, 140px);       /* bigger than About's 72px */
-  letter-spacing:2px;
-
-  background: var(--gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-
-  -webkit-text-stroke: 1px rgba(0,0,0,.12);  /* SAME stroke as About */
-  text-shadow: none;                          /* remove heavy shadow */
+  margin:0;text-transform:lowercase;font-weight:800;font-size:clamp(56px,12vw,140px);
+  letter-spacing:2px;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  -webkit-text-stroke:1px rgba(0,0,0,.12);text-shadow:none;
 }
-
-/* Hero subtitle */
-.hero__subtitle{
-  margin: 0;
-  font-size: clamp(18px, 2.5vw, 28px);
-  font-weight: 500;
-  color: var(--ink);
-}
-
-/* Blinking caret next to the typed text */
+.hero__subtitle{margin:0;font-size:clamp(18px,2.5vw,28px);font-weight:500;color:var(--ink)}
 .hero__subtitle .cursor{
-  display: inline-block;
-  width: 3px;
-  height: 1em;               /* match line height */
-  margin-left: 3px;
-  background: currentColor;   /* uses --ink */
-  vertical-align: -6px;       /* tiny optical tweak */
-  animation: blink 1s steps(1, end) infinite;
+  display:inline-block;width:3px;height:1em;margin-left:3px;background:currentColor;
+  vertical-align:-6px;animation:blink 1s steps(1,end) infinite
 }
+.hero__subtitle .cursor.typing{animation:none}
+@keyframes blink{0%,49%,100%{opacity:1}50%,99%{opacity:0}}
+.hero .nav{display:none}
 
-/* Stop blinking while typing (optional, if your JS toggles this class) */
-.hero__subtitle .cursor.typing{ animation: none; }
-
-/* Blink animation */
-@keyframes blink{
-  0%, 49%, 100% { opacity: 1; }
-  50%, 99%      { opacity: 0; }
-}
-
-
-/* kill any old inline hero links if they still exist */
-.hero .nav { display:none; }
-
-/* ===== Projects page: stack cards with image on top ===== */
-.projects-main{
-  display: block;
-  min-height: auto;
-  padding: 20px;
-}
-
+/* =========================
+   Projects list + case study
+   ========================= */
+.projects-main{display:block;min-height:auto;padding:20px}
 .projects{
-  width: min(1100px, 92vw);
-  margin-inline: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  text-align: center;
+  width:min(1100px,92vw);margin-inline:auto;display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;
 }
-
-/* reuse the same gradient-stroke title */
-/* More space between the header nav and the "projects" title */
-#projects .about-title{
-  /* was ~6px — give it real breathing room */
-  margin-top: clamp(28px, 6vh, 64px);
-}
-
-
-/* Card = glass panel (reuse about-card styles) but stack content */
+#projects .about-title{margin-top:clamp(28px,6vh,64px)}
 .project-card{
-  text-align: center;
-  padding: 20px 24px;
-  display: flex;
-  flex-direction: column;   /* image top, text below */
-  align-items: center;
-  gap: 16px;
+  text-align:center;padding:20px 24px;display:flex;flex-direction:column;align-items:center;gap:16px;
 }
-
-.project-media{
-  width: 100%;
-  padding: 0;
-  background: transparent;          /* remove frame look */
-  border: 0;                         /* no outer border */
-  box-shadow: none;
-  display: grid;
-  place-items: center;
-}
-
+.project-media{width:100%;padding:0;background:transparent;border:0;box-shadow:none;display:grid;place-items:center}
 .project-media img{
-  display: block;
-  max-width: 100%;
-  width: auto;
-  height: clamp(80px, 26vw, 220px); /* smaller, responsive box */
-  object-fit: contain;               /* never crop, just shrink */
-  object-position: center;
-
-  border: 1px solid rgba(0,0,0,.12); /* single, thin border */
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0,0,0,.06);
-
-  cursor: default;
-  transition: none;
+  display:block;max-width:100%;width:auto;height:clamp(80px,26vw,220px);
+  object-fit:contain;object-position:center;border:1px solid rgba(0,0,0,.12);border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);
 }
 
-
-/* Project titles: gradient underline on hover (like your project links) */
+/* Project titles */
 .project-details h2{
-  margin: 0 0 8px;
-  font-weight: 600;
-  font-size: clamp(20px, 2.2vw, 24px);
-  color: var(--ink);
-  position: relative;
-  display: inline-block;      /* needed for the ::after underline */
-  line-height: 1.2;
+  margin:0;font-weight:600;color:var(--ink);
+  font-size:clamp(18px,2vw,22px);
+}
+.project-details h2 + p{margin-top:14px}
+.project-details h2 a,
+.project-details h2 a:visited,
+.project-details h2 a:active,
+.project-details h2 a:focus{color:var(--ink);text-decoration:none;position:relative;display:inline-block}
+.project-card:last-of-type{margin-bottom:clamp(48px,8vw,120px)}
+
+/* Case-study page specific (applies to all case studies) */
+.page-food-tracker .projects-main,
+.page-data-automation .projects-main,
+.page-catmatch .projects-main{
+  display:block;min-height:auto;padding:20px;
 }
 
-.project-details h2::after{
-  content: "";
-  position: absolute;
-  left: 0; 
-  right: 0; 
-  bottom: -4px;               /* tweak to sit closer/farther */
-  height: 2px;
-  background: var(--gradient);/* pink → sky */
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s ease;
-  border-radius: 1px;
+.page-food-tracker .project-card,
+.page-data-automation .project-card,
+.page-catmatch .project-card{
+  gap:0;
 }
 
-.project-details h2:hover::after,
-.project-details h2:focus-visible::after{
-  transform: scaleX(1);
+.page-food-tracker .project-card > h2.about-subtitle,
+.page-data-automation .project-card > h2.about-subtitle,
+.page-catmatch .project-card > h2.about-subtitle{
+  margin:0;
 }
 
-/* (optional) if you prefer spacing on the last card instead */
-.project-card:last-of-type {
-  margin-bottom: clamp(48px, 8vw, 120px);
+.page-food-tracker .project-card > h2.about-subtitle + p,
+.page-food-tracker .project-card > h2.about-subtitle + ul,
+.page-data-automation .project-card > h2.about-subtitle + p,
+.page-data-automation .project-card > h2.about-subtitle + ul,
+.page-catmatch .project-card > h2.about-subtitle + p,
+.page-catmatch .project-card > h2.about-subtitle + ul{
+  margin-top:14px;
 }
 
-/* add vertical gap between the h2 and its first paragraph */
-.project-details h2 + p{
-  margin-top: 14px;               /* tweak: 10–18px works well */
+/* Small 3-up gallery (only shows on pages that have .cs-gallery) */
+.page-food-tracker .cs-gallery,
+.page-data-automation .cs-gallery,
+.page-catmatch .cs-gallery{
+  display:grid;gap:14px;grid-template-columns:1fr;
+}
+@media (min-width:760px){
+  .page-food-tracker .cs-gallery,
+  .page-data-automation .cs-gallery,
+  .page-catmatch .cs-gallery{
+    grid-template-columns:repeat(3,1fr);
+  }
+}
+.page-food-tracker .cs-gallery img,
+.page-data-automation .cs-gallery img,
+.page-catmatch .cs-gallery img{
+  width:100%;height:220px;object-fit:cover;
+  border:1px solid rgba(0,0,0,.12);border-radius:12px;
+  box-shadow:0 2px 10px rgba(0,0,0,.06);cursor:pointer;
+}
+.page-food-tracker .cs-gallery + .about-subtitle,
+.page-data-automation .cs-gallery + .about-subtitle,
+.page-catmatch .cs-gallery + .about-subtitle{
+  margin-top:14px;
 }
 
 
-
-.project-details h2 a{
-  color: var(--ink);
-  text-decoration: none;
-  position: relative;
-  display: inline-block;
+/* =========================
+   Global Modal (used on any page)
+   ========================= */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:none;
+  place-items:center;
+  z-index:9999;
+  padding:20px;
 }
-.project-details h2 a::after{ /* same as above */ }
-.project-details h2 a:hover::after,
-.project-details h2 a:focus-visible::after{ transform: scaleX(1); }
+.modal.open{display:grid}
+.modal img{
+  max-width:min(1100px,94vw);
+  max-height:88vh;
+  border-radius:14px;
+  box-shadow:0 10px 40px rgba(0,0,0,.35);
+}
+.modal .close{
+  position:absolute;top:16px;right:16px;background:var(--glass);
+  border:1px solid rgba(255,255,255,.5);
+  border-radius:999px;padding:6px 10px;font-weight:600;cursor:pointer;
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+}
+
+/* ===== Pills / Chips (close-tab style) ===== */
+.stack{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center}
+
+/* Generic pill */
+.chip{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:999px;
+  background:var(--glass);border:1px solid rgba(0,0,0,.12);
+  -webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);
+  box-shadow:0 2px 6px rgba(0,0,0,.06);
+  font-size:13px;line-height:1;text-transform:none;color:var(--ink);
+  transition:background .25s ease, transform .15s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+
+/* Icon inside a pill */
+.chip img{width:18px;height:18px;display:block}
+
+/* Replace the old icon-line layout with pill stack */
+.icon-line{ /* keep class name for minimal HTML edits */
+  display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;margin-top:10px
+}
+
+/* (Optional) subtle gradient border look */
+.chip--accent{
+  border-image:linear-gradient(90deg,var(--pastel-pink),var(--sky-blue)) 1;
+  border-width:1px;border-style:solid;
+}
 

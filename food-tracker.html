@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mimi's Portfolio — Food Tracker</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/miffy.png">
+  <link href="style.css" rel="stylesheet"/>
+</head>
+
+<body class="page-food-tracker">
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav">Home</a>
+      <a href="about.html" class="nav">About</a>
+      <a href="project.html" class="nav active">Projects</a>
+    </nav>
+  </header>
+
+  <main id="main" class="projects-main">
+    <section id="projects" class="projects" aria-labelledby="projects-title">
+      <h1 id="projects-title" class="about-title">food tracker</h1>
+
+      <!-- HERO: 3-up small gallery -->
+      <article class="about-card project-card">
+        <div class="cs-gallery" role="group" aria-label="Food Tracker UI gallery">
+          <img src="img/FoodTracker2.png" alt="Meal Input" data-enlarge decoding="async">
+          <img src="img/FoodTracker3.png" alt="Edit Meal" data-enlarge loading="lazy" decoding="async">
+          <img src="img/FoodTracker1.png" alt="Date Picker" data-enlarge loading="lazy" decoding="async">
+        </div>
+        <p class="about-subtitle">A minimalist iOS meal logging app that favors speed over bloat.</p>
+      </article>
+
+      <!-- OVERVIEW -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Overview</h2>
+        <p>
+          Food Tracker is a responsive iOS meal-logging app built with <strong>React Native (Expo)</strong> and
+          <strong>Supabase</strong>. It focuses on <em>frictionless logging</em>—fast entry, clean visuals,
+          and building sustainable habits without calorie overwhelm.
+        </p>
+<div class="stack meta-row" aria-label="project metadata">
+  <span class="chip chip--accent">Timeline: Jun 2025 – Jul 2025</span>
+  <span class="chip chip--accent">Role: Solo dev (design + frontend + backend)</span>
+</div>
+      </article>
+
+      <!-- PROBLEM -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Problem</h2>
+        <p>
+          Existing trackers are slow, cluttered, or calorie-obsessed. I needed a tool that makes logging take
+          <em>seconds</em>, not minutes—so I’d actually use it every day.
+        </p>
+      </article>
+
+      <!-- SOLUTION -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Solution</h2>
+        <p>
+          A one-line input with <strong>meal-type tags</strong>, a <strong>date/time picker</strong>,
+          and <strong>cloud sync</strong>—wrapped in a gentle, pastel UI that makes the habit feel easy.
+        </p>
+<div class="stack" aria-label="Tech stack">
+  <span class="chip chip--accent">React Native</span>
+  <span class="chip chip--accent">Expo Go</span>
+  <span class="chip chip--accent">Supabase Auth</span>
+  <span class="chip chip--accent">Postgres</span>
+  <span class="chip chip--accent">RTL + Jest (100% coverage)</span>
+</div>
+
+      </article>
+
+      <!-- CORE FEATURES -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Core Features</h2>
+        <ul style="text-align:left; margin: 8px auto 0; max-width: 760px; line-height:1.6">
+          <li><strong>Fast entry:</strong> one-line input + meal-type tagging (Breakfast/Lunch/Dinner/Snack)</li>
+          <li><strong>Date/time picker:</strong> log past meals or plan ahead</li>
+          <li><strong>Supabase sync:</strong> secure auth + real-time storage (100+ entries tested)</li>
+          <li><strong>Validation:</strong> prevents blank/duplicate inputs for cleaner logs</li>
+          <li><strong>Tests:</strong> 100% coverage for stable releases and zero regressions</li>
+        </ul>
+      </article>
+
+      <!-- IMPLEMENTATION -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Implementation</h2>
+        <p>
+          Built with React Native (Expo) for rapid iteration and OTA updates. Supabase handles auth and Postgres
+          storage with row-level security. UI state is kept lean to keep input latency near zero.
+        </p>
+      </article>
+
+      <!-- RESULTS -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Results</h2>
+        <ul style="text-align:left; margin: 8px auto 0; max-width: 760px; line-height:1.6">
+          <li><strong>Improved entry accuracy</strong> by ~60% with validation + clearer tags</li>
+          <li><strong>Consistent daily logging</strong> due to sub-3-second entry flow</li>
+          <li><strong>Confidence to iterate</strong> thanks to 100% test coverage</li>
+        </ul>
+      </article>
+
+      <!-- WHAT'S NEXT -->
+      <!-- FUTURE PLANS -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">What’s next</h2>
+
+        <p>
+          Two upgrades are already in progress to make Food Tracker more fun and more useful:
+        </p>
+
+        <!-- THEME SWITCHING -->
+  <!-- THEME SWITCHING -->
+<p><strong>1. Themes you can swap anytime.</strong> Right now the app uses a <em>Boba</em> theme — soft browns and pastels. Soon you’ll be able to switch between presets like <em>Sky</em> (light + airy), <em>Cat</em> (playful), or even <em>???</em> if I add more later.</p>
+
+<div class="stack" aria-label="planned themes">
+  <span class="chip chip--accent">Boba (current)</span>
+  <span class="chip chip--accent">Sky</span>
+  <span class="chip chip--accent">Cat</span>
+</div>
+
+
+
+        
+
+        <!-- AI MEAL PREP -->
+        <p style="margin-top:14px"><strong>2. AI Meal Prep.</strong> You’ll be able to say something like:</p>
+
+<p style="font-style:italic;">
+  “I have chicken, spinach, and rice — plan meals from 10/7 to 10/14.”
+</p>
+
+<p>It will:</p>
+<ul style="text-align:left; margin:8px auto 0; max-width:760px; line-height:1.6">
+  <li>Use what you already have before suggesting anything new</li>
+  <li>Build a plan for the exact date range you choose</li>
+  <li>Let you replace meals you don’t like with one tap</li>
+</ul>
+
+<div class="stack" aria-label="ai meal prep basics" style="margin-top:12px">
+  <span class="chip chip--accent">Input: pantry or cravings</span>
+  <span class="chip chip--accent">Input: date range</span>
+  <span class="chip chip--accent">Output: plan + grocery list</span>
+</div>
+
+
+
+        <p style="margin-top:14px">Both features will be added without changing the simplicity of the core logging flow.</p>
+              <nav class="footer__links" aria-label="back" style="margin-top:12px">
+          <a class="nav" href="project.html">← Back to Projects</a>
+        </nav>
+      </article>
+
+
+    </section>
+  </main>
+
+  
+
+  <footer class="footer">
+    <p class="footer__greeting">Thanks for reading!</p>
+    <nav class="footer__links" aria-label="footer links">
+      <a href="mailto:miminguyen173@gmail.com" class="nav nav--ghost">Email</a>
+      <a href="https://github.com/mimi110" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/mimi-nguyen-647a5724a/" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">LinkedIn</a>
+      <a href="file/Mimi Nguyen Resume.pdf" class="nav nav--ghost" target="_blank" rel="noopener noreferrer">Resume</a>
+    </nav>
+    <p class="footer__copy">© 2025 Mimi Nguyen</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

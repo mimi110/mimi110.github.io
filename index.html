@@ -6,13 +6,10 @@
   <title>Mimi Nguyen</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-
   <link rel="icon" type="image/png" href="img/miffy.png">
   <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <!-- Same nav as About; 'Home' is active -->
   <header class="site-header">
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html" class="nav active">Home</a>
@@ -22,29 +19,22 @@
   </header>
 
   <main id="main">
-    <section id="intro" class="hero section">
-      <h1 class="hero__title">mimi nguyen</h1>
-      <h2 class="hero__subtitle">
-        I am a <span class="typed-text"></span><span class="cursor">&nbsp;</span>
-      </h2>
+    <section id="intro" class="hero section" aria-labelledby="home-title">
+      <h1 id="home-title" class="hero__title">mimi nguyen</h1>
+      <h2 class="hero__subtitle">I am a <span class="typed-text"></span><span class="cursor" aria-hidden="true">&nbsp;</span></h2>
     </section>
   </main>
 
-<footer class="footer">
-  <p class="footer__greeting">Thanks for stopping by!</p>
-  
-
-  <nav class="footer__links" aria-label="footer links">
-    <a href="mailto:miminguyen173@gmail.com" class="nav nav--ghost">Email</a>
-    <a href="https://github.com/mimi110" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">GitHub</a>
-    <a href="https://www.linkedin.com/in/mimi-nguyen-647a5724a/" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">LinkedIn</a>
-    <!-- Recommended: keep this -->
-    <a href="file/Mimi Nguyen Resume.pdf" class="nav nav--ghost" target="_blank" rel="noopener noreferrer">Resume</a>
-  </nav>
-
-  <p class="footer__copy">© 2025 Mimi Nguyen</p>
-</footer>
-
+  <footer class="footer">
+    <p class="footer__greeting">Thanks for stopping by!</p>
+    <nav class="footer__links" aria-label="footer links">
+      <a href="mailto:miminguyen173@gmail.com" class="nav nav--ghost">Email</a>
+      <a href="https://github.com/mimi110" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/mimi-nguyen-647a5724a/" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">LinkedIn</a>
+      <a href="file/Mimi Nguyen Resume.pdf" class="nav nav--ghost" target="_blank" rel="noopener noreferrer">Resume</a>
+    </nav>
+    <p class="footer__copy">© 2025 Mimi Nguyen</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>

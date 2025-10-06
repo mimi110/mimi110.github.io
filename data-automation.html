@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Mimi's Portfolio — Data Automation</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="img/miffy.png">
+  <link href="style.css" rel="stylesheet"/>
+</head>
+
+<!-- ✅ Added case-study class -->
+<body class="page-data-automation">
+
+  <header class="site-header">
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="index.html" class="nav">Home</a>
+      <a href="about.html" class="nav">About</a>
+      <a href="project.html" class="nav active">Projects</a>
+    </nav>
+  </header>
+
+  <main id="main" class="projects-main">
+    <section class="projects" aria-labelledby="da-title">
+      <h1 id="da-title" class="about-title">data automation</h1>
+
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Overview</h2>
+        <p>
+          Data Automation is a tool that cleans and merges Excel files with inconsistent headers
+          using Python, Pandas, and a FastAPI backend. The front-end UI lets users drop in files
+          and download a perfectly structured output.
+        </p>
+      </article>
+
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Problem</h2>
+        <p>
+          Teams were manually fixing spreadsheets every week — dragging columns around, renaming headers,
+          and re-typing values. It was error-prone and boring.
+        </p>
+      </article>
+
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Solution</h2>
+        <p>
+          A scriptable pipeline that auto-detects formats (Type A / Type B), aligns headers,
+          and outputs a clean dataset without anyone touching Excel.
+        </p>
+
+        <p style="opacity:.7; margin-top:10px"><em>Full case study coming soon </em></p>
+
+        <nav class="footer__links" aria-label="back" style="margin-top:12px">
+          <a class="nav" href="project.html">← Back to Projects</a>
+        </nav>
+      </article>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p class="footer__greeting">Thanks for reading!</p>
+    <nav class="footer__links" aria-label="footer links">
+      <a href="mailto:miminguyen173@gmail.com" class="nav nav--ghost">Email</a>
+      <a href="https://github.com/mimi110" target="_bla_

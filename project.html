@@ -4,16 +4,12 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>Mimi's Portfolio — Projects</title>
-
-  <!-- Fonts & CSS -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <!-- (Optional) Match index favicon -->
   <link rel="icon" type="image/png" href="img/miffy.png">
   <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
-  <!-- Header nav: same as About/Index; "Projects" is active -->
   <header class="site-header">
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html" class="nav">Home</a>
@@ -22,7 +18,6 @@
     </nav>
   </header>
 
-  <!-- Main content (not vertically centered like Home) -->
   <main id="main" class="projects-main">
     <section id="projects" class="projects" aria-labelledby="projects-title">
       <h1 id="projects-title" class="about-title">projects</h1>
@@ -30,61 +25,53 @@
       <!-- Food Tracker -->
       <article class="about-card project-card">
         <figure class="project-media">
-          <img src="img/Food Tracker Logging.jpg" alt="Food Tracker app screenshot" onclick="enlargeImage(this)">
+          <img src="img/Food Tracker Logging.jpg" alt="Food Tracker app screenshot" data-enlarge>
         </figure>
         <div class="project-details">
-          <h2>
-            <a href="https://drive.google.com/file/d/1OOZ5GRvk7pFZZpWM03qAFR8n3IRRHxT_/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-              Food Tracker
-            </a>
-          </h2>
-          <p>
-            Tracks daily meals by type and date in an iOS app built with React Native and Expo Go.
-            Syncs entries and user data in real-time with Supabase backend.
-          </p>
+          <h2 class="about-subtitle">Food Tracker</h2>
+          <p>Tracks daily meals by type and date in an iOS app built with React Native and Expo Go.
+             Syncs entries and user data in real-time with Supabase backend.</p>
+          <nav class="footer__links" aria-label="project links">
+            <a class="nav" href="food-tracker.html">Case Study</a>
+            <a class="nav" href="https://drive.google.com/file/d/1OOZ5GRvk7pFZZpWM03qAFR8n3IRRHxT_/view" target="_blank" rel="noopener noreferrer">Demo</a>
+          </nav>
         </div>
       </article>
 
       <!-- Data Automation -->
       <article class="about-card project-card">
         <figure class="project-media">
-          <img src="img/Data Automation.png" alt="Data Automation web app screenshot" onclick="enlargeImage(this)">
+          <img src="img/Data Automation.png" alt="Data Automation web app screenshot" data-enlarge>
         </figure>
         <div class="project-details">
-          <h2>
-            <a href="https://drive.google.com/file/d/1366TOXXBCFYhuQbvlSa7igBh8yoYWy78/view?usp=sharing" target="_blank" rel="noopener noreferrer">
-              Data Automation
-            </a>
-          </h2>
-          <p>
-            Automates Excel data processing using Python Pandas, with a FastAPI backend and a React frontend.
-            Simplifies complex headers and merges defect and shipment data into a clean, organized format for analysis.
-          </p>
-          <!-- <a href="https://drive.google.com/drive/folders/1e693ASVDgutEyYPyVCd3VxFa_B3XkgMF?usp=drive_link" class="nav" target="_blank" rel="noopener noreferrer">Files</a> -->
+          <h2 class="about-subtitle">Data Automation</h2>
+          <p>Automates Excel data processing using Python Pandas, with a FastAPI backend and a React frontend.
+             Simplifies complex headers and merges defect and shipment data into a clean, organized format for analysis.</p>
+          <nav class="footer__links" aria-label="project links">
+            <a class="nav" href="data-automation.html">Case Study</a>
+            <a class="nav" href="https://drive.google.com/file/d/1366TOXXBCFYhuQbvlSa7igBh8yoYWy78/view" target="_blank" rel="noopener noreferrer">Demo</a>
+          </nav>
         </div>
       </article>
 
       <!-- CatMatch AI -->
       <article class="about-card project-card">
         <figure class="project-media">
-          <img src="img/CatMatch AI.png" alt="CatMatch AI screenshot" onclick="enlargeImage(this)">
+          <img src="img/CatMatch AI.png" alt="CatMatch AI screenshot" data-enlarge>
         </figure>
         <div class="project-details">
-          <h2>
-            <a href="https://catmatchai.netlify.app/" target="_blank" rel="noopener noreferrer">
-              CatMatch AI
-            </a>
-          </h2>
-          <p>
-            AI-powered product recommendation chatbot using React, Tailwind CSS, and Supabase
-            to answer cat care questions and suggest personalized products.
-          </p>
+          <h2 class="about-subtitle">CatMatch AI</h2>
+          <p>AI-powered product recommendation chatbot using React, Tailwind CSS, and Supabase
+             to answer cat care questions and suggest personalized products.</p>
+          <nav class="footer__links" aria-label="project links">
+            <a class="nav" href="catmatch-ai.html">Case Study</a>
+            <a class="nav" href="https://catmatchai.netlify.app/" target="_blank" rel="noopener noreferrer">Live App</a>
+          </nav>
         </div>
       </article>
     </section>
   </main>
 
-  <!-- Footer (same aesthetic) -->
   <footer class="footer">
     <p class="footer__greeting">Thanks for stopping by!</p>
     <nav class="footer__links" aria-label="footer links">
