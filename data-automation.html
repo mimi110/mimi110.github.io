@@ -12,7 +12,6 @@
 
 <!-- ✅ Added case-study class -->
 <body class="page-data-automation">
-
   <header class="site-header">
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html" class="nav">Home</a>
@@ -22,40 +21,118 @@
   </header>
 
   <main id="main" class="projects-main">
-    <section class="projects" aria-labelledby="da-title">
+    <section id="projects" class="projects" aria-labelledby="da-title">
       <h1 id="da-title" class="about-title">data automation</h1>
 
+      <!-- HERO: 3-up small gallery -->
       <article class="about-card project-card">
-        <h2 class="about-subtitle">Overview</h2>
-        <p>
-          Data Automation is a tool that cleans and merges Excel files with inconsistent headers
-          using Python, Pandas, and a FastAPI backend. The front-end UI lets users drop in files
-          and download a perfectly structured output.
-        </p>
+        <div class="cs-gallery" role="group" aria-label="Data Automation UI gallery">
+          <img src="img/DataAutomation3.png" alt="Upload & detect format" data-enlarge decoding="async">
+          <img src="img/DataAutomation2.png" alt="Mapping preview & validation" data-enlarge loading="lazy" decoding="async">
+          <img src="img/DataAutomation1.png" alt="Clean export ready to download" data-enlarge loading="lazy" decoding="async">
+        </div>
+        <p class="about-subtitle">A fast, no-drama pipeline that normalizes messy Excel into clean datasets.</p>
       </article>
 
+      <!-- OVERVIEW -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Overview</h2>
+        <p>Data Automation is a small, fast tool that turns messy spreadsheets into one clean file. You drag in Excel files; it figures out the layout, lines up the headers, and gives you a tidy download. Built with Python/Pandas + FastAPI and a tiny React front end. <li><strong>Multi-source ready:</strong> handles defect logs and shipment reports out of the box</li></p>
+        <div class="stack meta-row" aria-label="project metadata">
+          <span class="chip chip--accent">Timeline: May 2025 – Jul 2025</span>
+          <span class="chip chip--accent">Role: Solo dev (backend + frontend + QA)</span>
+        </div>
+      </article>
+
+      <!-- PROBLEM -->
       <article class="about-card project-card">
         <h2 class="about-subtitle">Problem</h2>
         <p>
-          Teams were manually fixing spreadsheets every week — dragging columns around, renaming headers,
-          and re-typing values. It was error-prone and boring.
+          Monthly spreadsheets arrived with different column orders, renamed headers, and mixed data types.
+          People spent hours rearranging columns and fixing small mistakes — slow, error-prone, and frustrating.
         </p>
       </article>
 
+      <!-- SOLUTION -->
       <article class="about-card project-card">
         <h2 class="about-subtitle">Solution</h2>
-        <p>
-          A scriptable pipeline that auto-detects formats (Type A / Type B), aligns headers,
-          and outputs a clean dataset without anyone touching Excel.
-        </p>
-
-        <p style="opacity:.7; margin-top:10px"><em>Full case study coming soon </em></p>
-
-        <nav class="footer__links" aria-label="back" style="margin-top:12px">
-          <a class="nav" href="project.html">← Back to Projects</a>
-        </nav>
+        <p>How it works: auto‑detect the layout (Type A/B), map headers with aliases + fuzzy match, run quick checks on types and required fields, then export CSV/XLSX with a stable column order—every time.</p>
+        <div class="stack" aria-label="Tech stack">
+          <span class="chip chip--accent">Python</span>
+          <span class="chip chip--accent">Pandas</span>
+          <span class="chip chip--accent">FastAPI</span>
+          <span class="chip chip--accent">React</span>
+          <span class="chip chip--accent">Postgres / Supabase</span>
+          <span class="chip chip--accent">RTL + Jest (100% coverage)</span>
+        </div>
       </article>
 
+      <!-- CORE FEATURES -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Core Features</h2>
+        <ul style="text-align:left; margin: 8px auto 0; max-width: 760px; line-height:1.6">
+          <li><strong>Auto format detection:</strong> distinguishes Type A / Type B via header signatures</li>
+          <li><strong>Header normalization:</strong> alias maps + fuzzy matching for near-duplicates</li>
+          <li><strong>Schema validation:</strong> type coercion, required fields, row-level error report</li>
+          <li><strong>Stable exports:</strong> CSV/XLSX with locked column order and consistent naming</li>
+          <li><strong>Tests:</strong> 100% coverage to prevent regressions across formats</li>
+        </ul>
+      </article>
+
+      <!-- IMPLEMENTATION -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Implementation</h2>
+        <p>
+          The API accepts uploads, inspects header rows to identify a format, and applies a mapping function to
+          standardize columns. Pandas handles tidy transforms and validations; FastAPI streams the result back.
+          The React UI keeps interaction minimal: drop files → automate → download.
+        </p>
+      </article>
+
+      <!-- RESULTS -->
+      <article class="about-card project-card">
+        <h2 class="about-subtitle">Results</h2>
+        <ul style="text-align:left; margin: 8px auto 0; max-width: 760px; line-height:1.6">
+          <li><strong>Cut prep time</strong> from ~45 minutes to under 5 minutes per batch</li>
+          <li><strong>Reduced errors</strong> with strict validation + clear warnings</li>
+          <li><strong>Faster releases</strong> thanks to 100% automated tests</li>
+        </ul>
+      </article>
+
+      <!-- WHAT’S NEXT -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">What’s next</h2>
+  <p>Two upgrades that let you <em>teach</em> the app exactly how the output should look — no presets.</p>
+
+  <!-- TEACH DESIRED FORMAT -->
+  <p><strong>1. Show a “correct” file.</strong> Upload a clean Excel that matches your target layout (column names, order, and types). Then upload a messy sample. The app compares the two, learns the mapping, and converts future files to match — automatically.</p>
+
+  <div class="stack" aria-label="teach format inputs">
+    <span class="chip chip--accent">Step 1: Upload correct Excel</span>
+    <span class="chip chip--accent">Step 2: Upload messy Excel</span>
+    <span class="chip chip--accent">Result: Converted to match</span>
+  </div>
+
+  <!-- AI: RENAME + EDIT CELLS -->
+  <p style="margin-top:14px"><strong>2. Quick AI: rename + edit cells.</strong> You tell it exactly what to do in short commands.</p>
+  <p><em>How you use it:</em> type a command, the app parses it. Keep it simple and explicit.</p>
+  <ul style="text-align:left; margin:8px auto 0; max-width:760px; line-height:1.6">
+    <li><code>rename: location -> site</code> — rename a header everywhere.</li>
+    <li><code>edit: set site = "Chicago" where location = "CHI"</code> — bulk edit by rule.</li>
+    <li><code>edit: B2 = "Fixed"</code> — change one specific cell.</li>
+  </ul>
+
+  <div class="stack" aria-label="quick ai basics" style="margin-top:12px">
+    <span class="chip chip--accent">Actions: rename / edit-cell</span>
+    <span class="chip chip--accent">Input: sample files</span>
+    <span class="chip chip--accent">Output: clean dataset</span>
+  </div>
+
+  <p style="margin-top:14px">Flow stays the same: upload → automate → export.</p>
+  <nav class="footer__links" aria-label="back" style="margin-top:12px">
+    <a class="nav" href="project.html">← Back to Projects</a>
+  </nav>
+</article>
     </section>
   </main>
 
@@ -63,4 +140,13 @@
     <p class="footer__greeting">Thanks for reading!</p>
     <nav class="footer__links" aria-label="footer links">
       <a href="mailto:miminguyen173@gmail.com" class="nav nav--ghost">Email</a>
-      <a href="https://github.com/mimi110" target="_bla_
+      <a href="https://github.com/mimi110" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">GitHub</a>
+      <a href="https://www.linkedin.com/in/mimi-nguyen-647a5724a/" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">LinkedIn</a>
+      <a href="file/Mimi Nguyen Resume.pdf" class="nav nav--ghost" target="_blank" rel="noopener noreferrer">Resume</a>
+    </nav>
+    <p class="footer__copy">© 2025 Mimi Nguyen</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
