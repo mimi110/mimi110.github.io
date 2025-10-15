@@ -16,6 +16,12 @@ img{max-width:100%;height:auto;display:block}
   --glass:rgba(255,255,255,.5);
   --glass-hover:rgba(255,255,255,.7);
   --gradient:linear-gradient(90deg,var(--pastel-pink),var(--sky-blue));
+
+  --brand-brown:#8a5a44;   /* app header/date badge/sign-out */
+  --accent-yellow:#f4b651; /* Breakfast pill */
+  --accent-blue:#8ac6d0;   /* Lunch pill */
+  --accent-pink:#c78ba3;   /* Dinner pill */
+  --accent-brown:#b48b78;  /* Snack pill */
 }
 
 /* =========================
@@ -290,3 +296,205 @@ footer{text-align:center}
   border-width:1px;border-style:solid;
 }
 
+/* =========================
+   Design System (case study)
+   ========================= */
+.design-system { gap: 14px; }
+
+.ds-card{
+  width: 100%;
+  padding: 18px 20px;
+  margin-top: 14px;
+  background: var(--glass);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 16px;
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  text-align: left;
+}
+
+/* Section labels like “01 Typography”, “02 Colors” */
+.ds-label{
+  margin: 0 0 12px;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--ink);
+  text-transform: none;
+  /* show Inter in the DS headers (optional) */
+  font-family: 'Inter', sans-serif;
+}
+
+/* --- Simplified Typography Spec Table --- */
+.ds-type-spec {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.ds-type-spec th,
+.ds-type-spec td {
+  text-align: left;
+  padding: 8px 10px;
+}
+
+.ds-type-spec thead th {
+  font-weight: 700;
+  color: var(--ink);
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.ds-type-spec tbody td {
+  font-weight: 400;
+  color: var(--ink-light);
+  border-bottom: 1px solid rgba(0,0,0,.06);
+}
+
+.ds-type-spec tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Style column bold for clarity */
+.ds-type-spec td:first-child {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+
+/* Use Inter only inside the typography area */
+.design-system .ds-col--font,
+.design-system .ds-type-preview span{
+  font-family: 'Inter', sans-serif;
+}
+
+/* Preview column truly flexible + ellipsis fallback */
+.ds-type-preview{ min-width: 0; }
+.ds-type-preview span{
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Type specimens */
+.ds-h1{ font-size: clamp(32px, 6vw, 72px); font-weight: 700; line-height: 1.05; }
+.ds-h2{ font-size: clamp(22px, 3.2vw, 28px); font-weight: 700; line-height: 1.15; }
+.ds-h3{ font-size: clamp(18px, 2.6vw, 20px); font-weight: 600; line-height: 1.2; }
+.ds-body{ font-size: clamp(15px, 1.6vw, 17px); font-weight: 400; }
+
+/* Let the H1 preview drop to its own line on smaller widths */
+@media (max-width: 960px){
+  .ds-type-row:first-child .ds-type-preview{
+    grid-column: 1 / -1;
+    text-align: left;
+    margin-top: 6px;
+  }
+}
+
+/* ---------- Color swatches ---------- */
+.ds-swatches{
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(180px,1fr));
+}
+.ds-swatch{ display: flex; gap: 10px; align-items: center; }
+.ds-chip{
+  width: 42px; height: 42px; border-radius: 8px;
+  display: inline-block; background: var(--swatch);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.ds-swatch-meta{ font-size: 12px; color: var(--ink); }
+.ds-swatch-meta code{ font-size: 11px; opacity: .8; }
+
+/* Group headers */
+.ds-color-group{ margin-top: 6px; }
+.ds-group-title{
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  margin: 8px 0 8px;
+}
+
+/* Make each group a horizontal row that wraps */
+.ds-swatch-row{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;           /* wraps on small screens */
+}
+
+/* Keep your swatch card look, but inline */
+.ds-swatch{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  background: rgba(255,255,255,.55);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* Reuse your chip + meta styles */
+.ds-chip{
+  width: 42px; height: 42px; border-radius: 8px;
+  display: inline-block; background: var(--swatch);
+  box-shadow: 0 2px 8px rgba(0,0,0,.06);
+}
+.ds-swatch-meta{ font-size: 12px; color: var(--ink); }
+.ds-swatch-meta code{ font-size: 11px; opacity: .8; }
+
+/* Slightly smaller on narrow screens */
+@media (max-width: 520px){
+  .ds-chip{ width: 38px; height: 38px; }
+  .ds-swatch{ padding: 6px; gap: 8px; }
+}
+/* Typography spec table (same style you used on Food Tracker) */
+.ds-type-spec { width:100%; border-collapse:collapse; font-size:14px; }
+.ds-type-spec th, .ds-type-spec td { text-align:left; padding:8px 10px; }
+.ds-type-spec thead th { font-weight:700; color:var(--ink); border-bottom:1px solid rgba(0,0,0,.12); }
+.ds-type-spec tbody td { font-weight:400; color:var(--ink-light); border-bottom:1px solid rgba(0,0,0,.06); }
+.ds-type-spec tbody tr:last-child td { border-bottom:none; }
+.ds-type-spec td:first-child { font-weight:600; color:var(--ink); }
+
+/* Scope Inter ONLY to the DS typography font column */
+.design-system .ds-col--font { font-family:'Inter', sans-serif; }
+
+/* Colors grouped horizontally (Brand, Grayscale) */
+.ds-color-group{ margin-top:6px; }
+.ds-group-title{ font-size:13px; font-weight:600; color:var(--ink); margin:8px 0 8px; }
+.ds-swatch-row{
+  list-style:none; margin:0; padding:0;
+  display:flex; gap:12px; flex-wrap:wrap;
+}
+.ds-swatch{
+  display:flex; align-items:center; gap:10px;
+  padding:6px 8px; border-radius:12px;
+  background:rgba(255,255,255,.55);
+  border:1px solid rgba(0,0,0,.06);
+}
+.ds-chip{
+  width:42px; height:42px; border-radius:8px;
+  display:inline-block; background:var(--swatch);
+  box-shadow:0 2px 8px rgba(0,0,0,.06);
+}
+.ds-swatch-meta{ font-size:12px; color:var(--ink); }
+.ds-swatch-meta code{ font-size:11px; opacity:.8; }
+
+@media (max-width:520px){
+  .ds-chip{ width:38px; height:38px; }
+  .ds-swatch{ padding:6px; gap:8px; }
+}
+.pull-quote {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.6;
+  color: var(--ink-light);
+  background: rgba(255,255,255,0.55);
+  border-left: 4px solid var(--pastel-pink);
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin: 14px auto;
+  max-width: 700px;
+}

@@ -26,8 +26,8 @@
       <!-- HERO: 3-up small gallery -->
       <article class="about-card project-card">
         <div class="cs-gallery" role="group" aria-label="Food Tracker UI gallery">
-          <img src="img/FoodTracker2.png" alt="Meal Input" data-enlarge decoding="async">
-          <img src="img/FoodTracker3.png" alt="Edit Meal" data-enlarge loading="lazy" decoding="async">
+          <img src="img/FoodTracker3.png" alt="Edit Meal" data-enlarge decoding="async">
+          <img src="img/FoodTracker2.png" alt="Meal Input" data-enlarge loading="lazy" decoding="async">
           <img src="img/FoodTracker1.png" alt="Date Picker" data-enlarge loading="lazy" decoding="async">
         </div>
         <p class="about-subtitle">A minimalist iOS meal logging app that favors speed over bloat.</p>
@@ -47,29 +47,184 @@
 </div>
       </article>
 
-      <!-- PROBLEM -->
-      <article class="about-card project-card">
-        <h2 class="about-subtitle">Problem</h2>
-        <p>
-          Existing trackers are slow, cluttered, or calorie-obsessed. I needed a tool that makes logging take
-          <em>seconds</em>, not minutes—so I’d actually use it every day.
-        </p>
-      </article>
+      <!-- DESIGN SYSTEM -->
+<article class="about-card project-card design-system" id="design-system" aria-labelledby="ds-title">
+  <h2 class="about-subtitle" id="ds-title">Design System</h2>
 
-      <!-- SOLUTION -->
-      <article class="about-card project-card">
-        <h2 class="about-subtitle">Solution</h2>
-        <p>
-          A one-line input with <strong>meal-type tags</strong>, a <strong>date/time picker</strong>,
-          and <strong>cloud sync</strong>—wrapped in a simple UI that makes the habit feel easy.
-        </p>
-<div class="stack" aria-label="Tech stack">
-  <span class="chip chip--accent">React Native</span>
-  <span class="chip chip--accent">Expo Go</span>
-  <span class="chip chip--accent">Supabase Auth</span>
-  <span class="chip chip--accent">Postgres</span>
-  <span class="chip chip--accent">RTL + Jest (100% coverage)</span>
+ <!-- TYPOGRAPHY (accurate to the app) -->
+<section class="ds-card ds-typography" aria-labelledby="ds-type-title">
+  <h3 id="ds-type-title" class="ds-label">01 Typography</h3>
+
+  <table class="ds-type-spec">
+    <thead>
+      <tr>
+        <th>Style</th>
+        <th>Font</th>
+        <th>Size</th>
+        <th>Weight</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+  <td>Screen Title</td>
+  <td>System (SF Pro / Roboto)</td>
+  <td>22</td>
+  <td>Semi-Bold</td>
+</tr>
+<tr>
+  <td>Body (Entries)</td>
+  <td>System (SF Pro / Roboto)</td>
+  <td>15</td>
+  <td>Medium</td>
+</tr>
+<tr>
+  <td>Pill Label</td>
+  <td>System (SF Pro / Roboto)</td>
+  <td>14</td>
+  <td>Semi-Bold</td>
+</tr>
+<tr>
+  <td>Badge / Button</td>
+  <td>System (SF Pro / Roboto)</td>
+  <td>14</td>
+  <td>Semi-Bold</td>
+</tr>
+<tr>
+  <td>Small Label</td>
+  <td>System (SF Pro / Roboto)</td>
+  <td>12</td>
+  <td>Semi-Bold</td>
+</tr>
+<tr>
+  <td>Input Text</td>
+  <td>System (SF Pro / Roboto)</td>
+  <td>16</td>
+  <td>Regular</td>
+</tr>
+
+    </tbody>
+  </table>
+
+  <!-- Optional tiny note to avoid confusion -->
+  <p style="margin-top:8px; font-size:12px; color:var(--ink-light);">
+     Food Tracker uses platform system fonts for native feel and speed.
+  </p>
+</section>
+
+
+  <!-- COLORS -->
+  <section class="ds-card ds-colors" aria-labelledby="ds-color-title">
+    <h3 id="ds-color-title" class="ds-label">02 Colors</h3>
+
+    <div class="ds-color-group">
+  <div class="ds-group-title">Brand</div>
+  <ul class="ds-swatch-row" role="list">
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: var(--brand-brown)"></span>
+      <span class="ds-swatch-meta"><strong>Brand (Milk Tea)</strong><br/><code>#8A5A44</code></span>
+    </li>
+
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: var(--accent-yellow)"></span>
+      <span class="ds-swatch-meta"><strong>Accent — Breakfast</strong><br/><code>#F4B651</code></span>
+    </li>
+
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: var(--accent-blue)"></span>
+      <span class="ds-swatch-meta"><strong>Accent — Lunch</strong><br/><code>#8AC6D0</code></span>
+    </li>
+
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: var(--accent-pink)"></span>
+      <span class="ds-swatch-meta"><strong>Accent — Dinner</strong><br/><code>#C78BA3</code></span>
+    </li>
+
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: var(--accent-brown)"></span>
+      <span class="ds-swatch-meta"><strong>Accent — Snack</strong><br/><code>#B48B78</code></span>
+    </li>
+  </ul>
 </div>
+
+<div class="ds-color-group">
+  <div class="ds-group-title">Grayscale</div>
+  <ul class="ds-swatch-row" role="list">
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: #111111"></span>
+      <span class="ds-swatch-meta"><strong>Gray 900</strong><br/><code>#111111</code></span>
+    </li>
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: #333333"></span>
+      <span class="ds-swatch-meta"><strong>Gray 800</strong><br/><code>#333333</code></span>
+    </li>
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: #555555"></span>
+      <span class="ds-swatch-meta"><strong>Gray 700</strong><br/><code>#555555</code></span>
+    </li>
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: #BBBBBB"></span>
+      <span class="ds-swatch-meta"><strong>Gray 300</strong><br/><code>#BBBBBB</code></span>
+    </li>
+    <li class="ds-swatch">
+      <span class="ds-chip" style="--swatch: #FFFFFF; border:1px solid rgba(0,0,0,.12)"></span>
+      <span class="ds-swatch-meta"><strong>White</strong><br/><code>#FFFFFF</code></span>
+    </li>
+  </ul>
+</div>
+
+  </section>
+</article>
+
+
+     <!-- PROBLEM -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">Problem</h2>
+  <p>
+    Meal trackers felt <strong>slow</strong>, <strong>cluttered</strong>, and overly <strong>calorie-centric</strong>.
+    I wanted something I’d actually use daily—logging should take <em>seconds</em>, not minutes.
+  </p>
+  <ul style="text-align:left; margin: 8px auto 0; max-width: 760px; line-height:1.6">
+    <li>Too many taps to record a simple meal</li>
+    <li>Interfaces overloaded with nutrition fields I didn’t need</li>
+    <li>No quick way to tag meal type or backdate an entry</li>
+  </ul>
+</article>
+
+<!-- USER FEEDBACK -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">User Feedback</h2>
+  <p>Early testers echoed the same frustrations:</p>
+  <ul style="text-align:left; margin:8px auto 0; max-width:760px; line-height:1.6">
+    <li><em>“I just want to jot meals down fast—no calorie math.”</em></li>
+    <li><em>“Other apps feel heavy. After a week I stop logging.”</em></li>
+    <li><em>“If I forget, editing the date later should be easy.”</em></li>
+  </ul>
+</article>
+
+
+<!-- SOLUTION -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">Solution</h2>
+  <p>
+    A minimalist flow built for <strong>speed</strong> and <strong>clarity</strong>:
+  </p>
+  <ul style="text-align:left; margin: 8px auto 0; max-width: 760px; line-height:1.6">
+    <li><strong>One-line input</strong> → type and hit add (no modal maze)</li>
+    <li><strong>Meal-type tags</strong> (Breakfast/Lunch/Dinner/Snack) → quick categorization without clutter</li>
+    <li><strong>Date/time picker</strong> → log past meals or fix mistakes in seconds</li>
+    <li><strong>Supabase sync</strong> → secure auth + real-time storage across devices</li>
+    <li><strong>Input validation</strong> → prevents blanks/duplicates for cleaner history</li>
+  </ul>
+
+  <div class="stack" aria-label="Tech stack" style="margin-top:12px">
+    <span class="chip chip--accent">React Native</span>
+    <span class="chip chip--accent">Expo Go</span>
+    <span class="chip chip--accent">Supabase Auth</span>
+    <span class="chip chip--accent">Postgres</span>
+    <span class="chip chip--accent">RTL + Jest (100% coverage)</span>
+  </div>
+</article>
+
 
       </article>
 

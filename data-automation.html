@@ -6,6 +6,7 @@
   <title>Mimi's Portfolio — Data Automation</title>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="img/miffy.png">
   <link href="style.css" rel="stylesheet"/>
 </head>
@@ -34,38 +35,183 @@
         <p class="about-subtitle">A fast, no-drama pipeline that normalizes messy Excel into clean datasets.</p>
       </article>
 
-      <!-- OVERVIEW -->
-      <article class="about-card project-card">
-        <h2 class="about-subtitle">Overview</h2>
-        <p>Data Automation is a small, fast tool that turns messy spreadsheets into one clean file. You drag in Excel files; it figures out the layout, lines up the headers, and gives you a tidy download. Built with Python/Pandas + FastAPI and a tiny React front end. <li><strong>Multi-source ready:</strong> handles defect logs and shipment reports out of the box</li></p>
-        <div class="stack meta-row" aria-label="project metadata">
-          <span class="chip chip--accent">Timeline: May 2025 – Jul 2025</span>
-          <span class="chip chip--accent">Role: Solo dev (backend + frontend + QA)</span>
-        </div>
-      </article>
+<!-- OVERVIEW -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">Overview</h2>
+  <p>
+    Data Automation is a small, fast tool that turns messy spreadsheets into one clean file.
+    You drag in Excel files; it figures out the layout, lines up the headers, and gives you a tidy download.
+    Built with <strong>Python/Pandas</strong> + <strong>FastAPI</strong> and a <strong>React</strong> front end.
+  </p>
+  <ul style="text-align:left; margin: 8px auto 0; max-width: 760px; line-height:1.6">
+    <li><strong>Multi-source ready:</strong> handles defect logs and shipment reports out of the box</li>
+  </ul>
+  <div class="stack meta-row" aria-label="project metadata" style="margin-top:10px">
+    <span class="chip chip--accent">Timeline: May 2025 – Jul 2025</span>
+    <span class="chip chip--accent">Role: Solo dev (backend + frontend + QA)</span>
+  </div>
+</article>
 
-      <!-- PROBLEM -->
-      <article class="about-card project-card">
-        <h2 class="about-subtitle">Problem</h2>
-        <p>
-          Monthly spreadsheets arrived with different column orders, renamed headers, and mixed data types.
-          People spent hours rearranging columns and fixing small mistakes — slow, error-prone, and frustrating.
-        </p>
-      </article>
+<!-- DESIGN SYSTEM -->
+<article class="about-card project-card design-system" id="design-system" aria-labelledby="ds-title">
+  <h2 class="about-subtitle" id="ds-title">Design System</h2>
 
-      <!-- SOLUTION -->
-      <article class="about-card project-card">
-        <h2 class="about-subtitle">Solution</h2>
-        <p>How it works: auto‑detect the layout (Type A/B), map headers with aliases + fuzzy match, run quick checks on types and required fields, then export CSV/XLSX with a stable column order—every time.</p>
-        <div class="stack" aria-label="Tech stack">
-          <span class="chip chip--accent">Python</span>
-          <span class="chip chip--accent">Pandas</span>
-          <span class="chip chip--accent">FastAPI</span>
-          <span class="chip chip--accent">React</span>
-          <span class="chip chip--accent">Postgres / Supabase</span>
-          <span class="chip chip--accent">RTL + Jest (100% coverage)</span>
-        </div>
-      </article>
+  <!-- TYPOGRAPHY -->
+  <section class="ds-card ds-typography" aria-labelledby="ds-type-title">
+    <h3 id="ds-type-title" class="ds-label">01 Typography</h3>
+
+    <table class="ds-type-spec">
+      <thead>
+        <tr>
+          <th>Style</th>
+          <th>Font</th>
+          <th>Size</th>
+          <th>Weight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>H1</td>
+          <td class="ds-col--font">Inter</td>
+          <td>36–60px</td>
+          <td>Bold</td>
+        </tr>
+        <tr>
+          <td>H2</td>
+          <td class="ds-col--font">Inter</td>
+          <td>22–28px</td>
+          <td>Bold</td>
+        </tr>
+        <tr>
+          <td>H3</td>
+          <td class="ds-col--font">Inter</td>
+          <td>18–20px</td>
+          <td>Semi-bold</td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td class="ds-col--font">Inter</td>
+          <td>15–17px</td>
+          <td>Regular / Medium</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- COLORS -->
+  <section class="ds-card ds-colors" aria-labelledby="ds-color-title">
+    <h3 id="ds-color-title" class="ds-label">02 Colors</h3>
+
+    <!-- Brand row -->
+    <div class="ds-color-group">
+      <div class="ds-group-title">Brand</div>
+      <ul class="ds-swatch-row" role="list">
+        <!-- Purples from your ExcelUpload UI -->
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#d1b3f5"></span>
+          <span class="ds-swatch-meta"><strong>Lavender (Primary)</strong><br/><code>#D1B3F5</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#c6a8f0"></span>
+          <span class="ds-swatch-meta"><strong>Lavender Hover</strong><br/><code>#C6A8F0</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#3c2a60"></span>
+          <span class="ds-swatch-meta"><strong>Deep Purple (Dark)</strong><br/><code>#3C2A60</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#5d3c87"></span>
+          <span class="ds-swatch-meta"><strong>Deep Purple Hover</strong><br/><code>#5D3C87</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#f7caa2"></span>
+          <span class="ds-swatch-meta"><strong>Peach (CTA)</strong><br/><code>#F7CAA2</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#f2b88a"></span>
+          <span class="ds-swatch-meta"><strong>Peach Hover</strong><br/><code>#F2B88A</code></span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Grayscale row -->
+    <div class="ds-color-group">
+      <div class="ds-group-title">Grayscale</div>
+      <ul class="ds-swatch-row" role="list">
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#111111"></span>
+          <span class="ds-swatch-meta"><strong>Gray 900</strong><br/><code>#111111</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#333333"></span>
+          <span class="ds-swatch-meta"><strong>Gray 800</strong><br/><code>#333333</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#555555"></span>
+          <span class="ds-swatch-meta"><strong>Gray 700</strong><br/><code>#555555</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#BBBBBB"></span>
+          <span class="ds-swatch-meta"><strong>Gray 300</strong><br/><code>#BBBBBB</code></span>
+        </li>
+        <li class="ds-swatch">
+          <span class="ds-chip" style="--swatch:#FFFFFF; border:1px solid rgba(0,0,0,.12)"></span>
+          <span class="ds-swatch-meta"><strong>White</strong><br/><code>#FFFFFF</code></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+</article>
+<!-- PROBLEM -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">Problem</h2>
+  <p>
+    Monthly spreadsheets came in with different column orders, renamed headers, and mixed data types.
+    Teams spent hours rearranging and cleaning by hand — a slow, error-prone, and frustrating process.
+  </p>
+  <ul style="text-align:left; margin:8px auto 0; max-width:760px; line-height:1.6">
+    <li>Same report looked different depending on the source</li>
+    <li>Columns renamed inconsistently (e.g. “Location” vs “Site”)</li>
+    <li>Manual cleanup caused frequent typos and mismatches</li>
+  </ul>
+</article>
+
+<!-- USER FEEDBACK -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">User Feedback</h2>
+  <p>Before this tool, users shared these frustrations about monthly metrics:</p>
+  <ul style="text-align:left; margin:8px auto 0; max-width:760px; line-height:1.6">
+    <li><em>“Every month the metrics come in a different format, so I spend forever fixing columns to match our company’s standard.”</em></li>
+    <li><em>“Even after cleaning, it’s easy to make mistakes.”</em></li>
+    <li><em>“If the tool just gave me the same format every time, it’d save me hours.”</em></li>
+  </ul>
+</article>
+
+
+
+<!-- SOLUTION -->
+<article class="about-card project-card">
+  <h2 class="about-subtitle">Solution</h2>
+  <p>
+    A lightweight pipeline that automates the messy prep. The flow:
+  </p>
+  <ul style="text-align:left; margin:8px auto 0; max-width:760px; line-height:1.6">
+    <li><strong>Auto-detect format</strong> → recognize Type A vs Type B layouts instantly</li>
+    <li><strong>Normalize headers</strong> → alias maps + fuzzy match to unify naming</li>
+    <li><strong>Validate schema</strong> → enforce types + required fields with clear error output</li>
+    <li><strong>Export clean files</strong> → consistent CSV/XLSX with locked column order</li>
+  </ul>
+
+  <div class="stack" aria-label="Tech stack" style="margin-top:12px">
+    <span class="chip chip--accent">Python</span>
+    <span class="chip chip--accent">Pandas</span>
+    <span class="chip chip--accent">FastAPI</span>
+    <span class="chip chip--accent">React</span>
+    <span class="chip chip--accent">Postgres / Supabase</span>
+    <span class="chip chip--accent">RTL + Jest (100% coverage)</span>
+  </div>
+</article>
+
 
       <!-- CORE FEATURES -->
       <article class="about-card project-card">
