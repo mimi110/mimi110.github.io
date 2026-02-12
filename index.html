@@ -1,41 +1,317 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Mimi Nguyen</title>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="img/m.png">
-  <link href="style.css" rel="stylesheet"/>
-</head>
-<body>
-  <header class="site-header">
-    <nav class="main-nav" aria-label="Main navigation">
-      <a href="index.html" class="nav active">Home</a>
-      <a href="about.html" class="nav">About</a>
-      <a href="project.html" class="nav">Projects</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Mimi Nguyen</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <main id="main">
-    <section id="intro" class="hero section" aria-labelledby="home-title">
-      <h1 id="home-title" class="hero__title">mimi nguyen</h1>
-      <h2 class="hero__subtitle">I am a <span class="typed-text"></span><span class="cursor" aria-hidden="true">&nbsp;</span></h2>
-    </section>
-  </main>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-  <footer class="footer">
-    <p class="footer__greeting">Thanks for stopping by!</p>
-    <nav class="footer__links" aria-label="footer links">
-      <a href="mailto:miminguyen173@gmail.com" class="nav nav--ghost">Email</a>
-      <a href="https://github.com/mimi110" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">GitHub</a>
-      <a href="https://www.linkedin.com/in/mimi-nguyen-647a5724a/" target="_blank" rel="noopener noreferrer" class="nav nav--ghost">LinkedIn</a>
-      <a href="file/Mimi Nguyen Resume.pdf" class="nav nav--ghost" target="_blank" rel="noopener noreferrer">Resume</a>
-    </nav>
-    <p class="footer__copy">© 2025 Mimi Nguyen</p>
-  </footer>
+    <style>
+      :root {
+        --ink: #3b4a5a;
+        --brand: #3a5f8a;
+        --brand_light: #6fa8dc;
+        --bg_top: #eaf6ff;
+        --bg_mid: #f8fcff;
+        --shadow: rgba(111, 168, 220, 0.15);
+        --ring: #e3f2fd;
+        --footer: #7a9cc6;
 
-  <script src="script.js"></script>
-</body>
+        --gap_media_to_link: 14px; /* ✅ SAME GAP FOR BOTH PROJECTS */
+        --thumb_gap: 16px;
+        --thumb_small: 110px;
+        --thumb_data: 180px;
+        --main_image_width: 385px;
+      }
+
+      body {
+        font-family: "Nunito", sans-serif;
+        background: linear-gradient(
+          to bottom,
+          var(--bg_top) 0%,
+          var(--bg_mid) 40%,
+          #ffffff 100%
+        );
+        color: var(--ink);
+        text-align: center;
+        margin: 0;
+        position: relative;
+      }
+
+      /* Clouds background */
+      .clouds {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0.6;
+        background: radial-gradient(circle at 12% 14%, rgba(255, 255, 255, 0.95) 0 40px, transparent 41px),
+          radial-gradient(circle at 17% 15%, rgba(255, 255, 255, 0.95) 0 55px, transparent 56px),
+          radial-gradient(circle at 23% 16%, rgba(255, 255, 255, 0.95) 0 42px, transparent 43px),
+          radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.9) 0 46px, transparent 47px),
+          radial-gradient(circle at 84% 13%, rgba(255, 255, 255, 0.9) 0 62px, transparent 63px),
+          radial-gradient(circle at 90% 14%, rgba(255, 255, 255, 0.9) 0 40px, transparent 41px),
+          radial-gradient(circle at 30% 78%, rgba(255, 255, 255, 0.7) 0 52px, transparent 53px),
+          radial-gradient(circle at 36% 79%, rgba(255, 255, 255, 0.7) 0 68px, transparent 69px),
+          radial-gradient(circle at 44% 80%, rgba(255, 255, 255, 0.7) 0 46px, transparent 47px);
+        animation: drift 18s linear infinite;
+      }
+
+      @keyframes drift {
+        0% {
+          transform: translateX(0);
+        }
+        50% {
+          transform: translateX(24px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+
+      h1 {
+        font-size: 52px;
+        margin: 40px 0 10px;
+        font-weight: 700;
+        color: var(--brand);
+        position: relative;
+        z-index: 1;
+      }
+
+      .links {
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 1;
+      }
+
+      .links a {
+        margin: 0 14px;
+        text-decoration: none;
+        color: var(--brand_light);
+        font-weight: 600;
+      }
+
+      .links a:hover {
+        color: var(--brand);
+      }
+
+      .container {
+        max-width: 720px;
+        margin: auto;
+        padding: 40px;
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px var(--shadow), 0 0 0 1px var(--ring);
+        position: relative;
+        z-index: 1;
+      }
+
+      .section-title {
+        font-size: 26px;
+        font-weight: 600;
+        margin: 30px 0 10px;
+        color: var(--brand);
+      }
+
+      .description {
+        font-size: 16px;
+        line-height: 1.6;
+        max-width: 520px;
+        margin: 0 auto 25px;
+      }
+
+      .project {
+        margin-top: 40px;
+      }
+
+      .project-title {
+        font-weight: 600;
+        font-size: 20px;
+      }
+
+      /* ✅ Unified media spacing so the gap below images matches */
+      .project-media {
+        margin-top: 10px;
+        margin-bottom: var(--gap_media_to_link);
+      }
+
+      .thumb-row {
+        display: flex;
+        justify-content: center;
+        gap: var(--thumb_gap);
+        flex-wrap: wrap;
+      }
+
+      img.project-img {
+        border-radius: 14px;
+        cursor: pointer;
+        transition: 0.2s;
+        display: block;
+      }
+
+      /* Food Tracker thumbs */
+      .thumb-small {
+        width: var(--thumb_small);
+      }
+
+      /* Data Automation main image */
+      .main-image {
+        width: var(--main_image_width);
+        max-width: 100%;
+        margin: 0 auto 12px;
+      }
+
+      /* Data Automation thumbs */
+      .thumb-data {
+        width: var(--thumb_data);
+        padding: 6px;
+      }
+
+      .label a {
+        font-style: italic;
+        color: var(--brand_light);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .label a:hover {
+        color: var(--brand);
+        text-decoration: underline;
+      }
+
+      .footer {
+        margin: 50px 0 30px;
+        font-size: 14px;
+        color: var(--footer);
+        position: relative;
+        z-index: 1;
+      }
+
+      /* Modal */
+      .image-modal {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.45);
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+      }
+
+      .image-modal img {
+        max-width: 90%;
+        max-height: 85%;
+        border-radius: 18px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      }
+
+      .image-modal.active {
+        display: flex;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="clouds"></div>
+
+    <h1>Mimi Nguyen</h1>
+
+    <div class="links">
+      <a href="mailto:miminguyen173@gmail.com">Email</a>
+      <a href="https://github.com/mimi110" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://www.linkedin.com/in/miminguyen7/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="file/Mimi Nguyen Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
+
+    <div class="container">
+      <div class="section-title">Who I Am?</div>
+      <div class="description">
+        Hi there! I’m a Software Developer with a Computer Science degree from the University of Houston. I enjoy building efficient, 
+        user-friendly applications and working with software development, data analysis, and AI.
+      </div>
+
+      <div class="section-title">What I Build?</div>
+
+      <!-- Food Tracker -->
+      <div class="project">
+        <div class="project-title">Food Tracker</div>
+
+        <div class="project-media">
+          <div class="thumb-row">
+            <img class="project-img thumb-small" src="img/FoodTracker3.png" alt="Food Tracker screenshot 1" loading="lazy" />
+            <img class="project-img thumb-small" src="img/FoodTracker2.png" alt="Food Tracker screenshot 2" loading="lazy" />
+            <img class="project-img thumb-small" src="img/FoodTracker1.png" alt="Food Tracker screenshot 3" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="label">
+          <a href="#" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        </div>
+
+        <div class="description">
+          Tracks daily meals by type and date in an iOS app built with React Native and Expo Go, with user data synced in
+          real time through Supabase backend. Includes an AI feature powered by Groq that helps users understand their
+          food logs and provides health insights.
+        </div>
+      </div>
+
+      <!-- Data Automation -->
+      <div class="project">
+        <div class="project-title">Data Automation</div>
+
+        <div class="project-media">
+          <img class="project-img main-image" src="img/DataAutomation3.png" alt="Data Automation main screenshot" loading="lazy" />
+          <div class="thumb-row">
+            <img class="project-img thumb-data" src="img/DataAutomation2.png" alt="Data Automation screenshot 2" loading="lazy" />
+            <img class="project-img thumb-data" src="img/DataAutomation1.png" alt="Data Automation screenshot 3" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="label">
+          <a href="https://github.com/mimi110/Data-Automation" target="_blank" rel="noopener noreferrer">View Code</a>
+        </div>
+
+        <div class="description">
+          Automates Excel data processing using Python and Pandas, with a FastAPI backend and React frontend. Converts
+          complex spreadsheets into clean, organized data that is easier to understand and analyze.
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">© 2026 Mimi Nguyen</div>
+
+    <div class="image-modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Image preview">
+      <img id="modalImage" alt="Expanded project image" />
+    </div>
+
+    <script>
+      const modal = document.getElementById("imageModal");
+      const modalImg = document.getElementById("modalImage");
+
+      const openModal = (src, alt) => {
+        modal.classList.add("active");
+        modalImg.src = src;
+        modalImg.alt = alt || "Expanded project image";
+      };
+
+      const closeModal = () => {
+        modal.classList.remove("active");
+        modalImg.removeAttribute("src");
+      };
+
+      document.querySelectorAll(".project img.project-img").forEach((img) => {
+        img.addEventListener("click", () => openModal(img.src, img.alt));
+      });
+
+      modal.addEventListener("click", closeModal);
+
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && modal.classList.contains("active")) closeModal();
+      });
+    </script>
+  </body>
 </html>
