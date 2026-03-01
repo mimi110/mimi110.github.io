@@ -133,6 +133,7 @@ font-style:italic;
 font-weight:800;
 color:var(--brand2);
 text-decoration:none;
+cursor:pointer;
 }
 
 .cta a:hover{
@@ -161,11 +162,13 @@ justify-content:center;
 display:flex;
 }
 
-.modal img{
+.modal img,
+.modal video{
 max-width:min(92vw,1100px);
 max-height:86vh;
 border-radius:18px;
 box-shadow:0 20px 60px rgba(0,0,0,.25);
+background:#000;
 }
 
 @media (max-width:820px){
@@ -204,7 +207,7 @@ flex:0 0 auto;
 <a href="mailto:miminguyen173@gmail.com">Email</a>
 <a href="https://github.com/mimi110" target="_blank">GitHub</a>
 <a href="https://www.linkedin.com/in/miminguyen7/" target="_blank">LinkedIn</a>
-<a href="https://drive.google.com/file/d/1ny1sSdOuqnRKp2RH-kH4dsgAhQPbn4bJ/view?usp=sharing" target="_blank">Resume</a>
+<a href="https://drive.google.com/file/d/1hEr8uEv6uaVV-s4EDmkEIiv7-lHwRBOX/view?usp=sharing" target="_blank">Resume</a>
 </nav>
 
 <main>
@@ -224,20 +227,19 @@ I enjoy building efficient, user-friendly applications and working with software
 
 <div class="media">
 <div class="row">
-<img class="thumb" src="img/FoodTracker3.png" loading="lazy">
-<img class="thumb" src="img/FoodTracker2.png" loading="lazy">
-<img class="thumb" src="img/FoodTracker1.png" loading="lazy">
+<img class="thumb" src="img/FoodTracker1.png" loading="lazy" alt="Food Tracker screenshot 3">
+<img class="thumb" src="img/FoodTracker2.png" loading="lazy" alt="Food Tracker screenshot 2">
+<img class="thumb" src="img/FoodTracker3.png" loading="lazy" alt="Food Tracker screenshot 1">
 </div>
 </div>
 
 <div class="cta">
-<a href="#">Live Demo (Coming Soon)</a>
+<a href="#" id="foodtrackerDemo">Live Demo</a>
 </div>
 
 <p>
-Tracks daily meals by type and date in an iOS app built with React Native and Expo Go,
-with user data synced in real time through Supabase backend.
-Includes an AI feature powered by Groq that helps users understand their food logs and provides health insights.
+Tracks daily meals by type and date in a mobile app built with React Native and Expo Go, with real-time synchronization through Supabase. 
+Includes macro goal tracking, time-based aggregation, and trend visualization for calories and macronutrients.
 </p>
 
 </section>
@@ -248,11 +250,11 @@ Includes an AI feature powered by Groq that helps users understand their food lo
 
 <div class="media">
 
-<img class="main" src="img/DataAutomation3.png" loading="lazy">
+<img class="main" src="img/DataAutomation3.png" loading="lazy" alt="Data Automation screenshot 3">
 
 <div class="row">
-<img class="thumb2" src="img/DataAutomation2.png" loading="lazy">
-<img class="thumb2" src="img/DataAutomation1.png" loading="lazy">
+<img class="thumb2" src="img/DataAutomation2.png" loading="lazy" alt="Data Automation screenshot 2">
+<img class="thumb2" src="img/DataAutomation1.png" loading="lazy" alt="Data Automation screenshot 1">
 </div>
 
 </div>
@@ -273,14 +275,68 @@ Converts complex spreadsheets into clean, organized data that is easier to under
 <footer>© 2026 Mimi Nguyen</footer>
 
 <div class="modal" id="m">
-<img id="mi">
+<img id="mi" alt="">
+<video id="mv" controls playsinline preload="metadata">
+  <source id="mvs" src="" type="video/mp4">
+</video>
 </div>
 
 <script>
-const m=document.getElementById("m"),mi=document.getElementById("mi");
-document.querySelectorAll("main img").forEach(img=>img.onclick=()=>{m.classList.add("active");mi.src=img.src;document.body.style.overflow="hidden"});
-m.onclick=()=>{m.classList.remove("active");mi.src="";document.body.style.overflow=""};
-addEventListener("keydown",e=>e.key==="Escape"&&m.classList.contains("active")&&m.click());
+const m = document.getElementById("m");
+const mi = document.getElementById("mi");
+const mv = document.getElementById("mv");
+const mvs = document.getElementById("mvs");
+
+const openModalImage = (src) => {
+  mv.pause();
+  mv.style.display = "none";
+  mvs.src = "";
+  mv.load();
+
+  mi.style.display = "block";
+  mi.src = src;
+
+  m.classList.add("active");
+  document.body.style.overflow = "hidden";
+};
+
+const openModalVideo = (src) => {
+  mi.style.display = "none";
+  mi.src = "";
+
+  mv.style.display = "block";
+  mvs.src = src;
+  mv.load();
+
+  m.classList.add("active");
+  document.body.style.overflow = "hidden";
+};
+
+const closeModal = () => {
+  m.classList.remove("active");
+  mi.src = "";
+  mv.pause();
+  mvs.src = "";
+  mv.load();
+  document.body.style.overflow = "";
+};
+
+document.querySelectorAll("main img").forEach(img => {
+  img.addEventListener("click", () => openModalImage(img.src));
+});
+
+document.getElementById("foodtrackerDemo").addEventListener("click", (e) => {
+  e.preventDefault();
+  openModalVideo("file/Food%20Tracker%20Demo.mp4");
+});
+
+m.addEventListener("click", (e) => {
+  if (e.target === m) closeModal();
+});
+
+addEventListener("keydown", e => {
+  if (e.key === "Escape" && m.classList.contains("active")) closeModal();
+});
 </script>
 
 </body>
