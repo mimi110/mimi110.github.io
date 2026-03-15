@@ -5,6 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Mimi Nguyen</title>
 
+<script type="text/javascript">
+(function(c,l,a,r,i,t,y){
+c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "vwdfc6rac5");
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -277,66 +285,83 @@ Converts complex spreadsheets into clean, organized data that is easier to under
 <div class="modal" id="m">
 <img id="mi" alt="">
 <video id="mv" controls playsinline preload="metadata">
-  <source id="mvs" src="" type="video/mp4">
+<source id="mvs" src="" type="video/mp4">
 </video>
 </div>
 
 <script>
-const m = document.getElementById("m");
-const mi = document.getElementById("mi");
-const mv = document.getElementById("mv");
-const mvs = document.getElementById("mvs");
+const m=document.getElementById("m")
+const mi=document.getElementById("mi")
+const mv=document.getElementById("mv")
+const mvs=document.getElementById("mvs")
 
-const openModalImage = (src) => {
-  mv.pause();
-  mv.style.display = "none";
-  mvs.src = "";
-  mv.load();
+const openModalImage=(src)=>{
+mv.pause()
+mv.style.display="none"
+mvs.src=""
+mv.load()
+mi.style.display="block"
+mi.src=src
+m.classList.add("active")
+document.body.style.overflow="hidden"
+}
 
-  mi.style.display = "block";
-  mi.src = src;
+const openModalVideo=(src)=>{
+mi.style.display="none"
+mi.src=""
+mv.style.display="block"
+mvs.src=src
+mv.load()
+m.classList.add("active")
+document.body.style.overflow="hidden"
+}
 
-  m.classList.add("active");
-  document.body.style.overflow = "hidden";
-};
+const closeModal=()=>{
+m.classList.remove("active")
+mi.src=""
+mv.pause()
+mvs.src=""
+mv.load()
+document.body.style.overflow=""
+}
 
-const openModalVideo = (src) => {
-  mi.style.display = "none";
-  mi.src = "";
+document.querySelectorAll("main img").forEach(img=>{
+img.addEventListener("click",()=>{
+if(typeof clarity==="function"){clarity("event","Image_Click")}
+openModalImage(img.src)
+})
+})
 
-  mv.style.display = "block";
-  mvs.src = src;
-  mv.load();
+document.getElementById("foodtrackerDemo").addEventListener("click",(e)=>{
+e.preventDefault()
+openModalVideo("file/Food%20Tracker%20Demo.mp4")
+})
 
-  m.classList.add("active");
-  document.body.style.overflow = "hidden";
-};
+document.querySelectorAll("a").forEach(link=>{
+link.addEventListener("click",()=>{
+const linkText=(link.textContent||"Link").trim()
+const section=link.closest("section")
+const sectionTitle=section?.querySelector("h3")?.textContent?.trim()
 
-const closeModal = () => {
-  m.classList.remove("active");
-  mi.src = "";
-  mv.pause();
-  mvs.src = "";
-  mv.load();
-  document.body.style.overflow = "";
-};
+let eventName=linkText.replace(/\s+/g,"_").replace(/[^\w-]/g,"")
 
-document.querySelectorAll("main img").forEach(img => {
-  img.addEventListener("click", () => openModalImage(img.src));
-});
+if(sectionTitle){
+eventName=sectionTitle.replace(/\s+/g,"_").replace(/[^\w-]/g,"")+"_"+eventName+"_Click"
+}else{
+eventName=eventName+"_Click"
+}
 
-document.getElementById("foodtrackerDemo").addEventListener("click", (e) => {
-  e.preventDefault();
-  openModalVideo("file/Food%20Tracker%20Demo.mp4");
-});
+if(typeof clarity==="function"){clarity("event",eventName)}
+})
+})
 
-m.addEventListener("click", (e) => {
-  if (e.target === m) closeModal();
-});
+m.addEventListener("click",(e)=>{
+if(e.target===m)closeModal()
+})
 
-addEventListener("keydown", e => {
-  if (e.key === "Escape" && m.classList.contains("active")) closeModal();
-});
+addEventListener("keydown",e=>{
+if(e.key==="Escape"&&m.classList.contains("active"))closeModal()
+})
 </script>
 
 </body>
