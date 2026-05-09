@@ -204,6 +204,28 @@ scroll-snap-align:start;
 flex:0 0 auto;
 }
 }
+
+.feature-card{
+margin:18px auto 30px;
+padding:18px;
+max-width:620px;
+background:#f7fbff;
+border:1px solid var(--ring);
+border-radius:16px;
+box-shadow:0 8px 20px var(--shadow);
+}
+
+.feature-card h4{
+margin:0 0 10px;
+font-size:17px;
+color:var(--brand);
+}
+
+.feature-card p{
+margin:0 auto 16px;
+font-size:15px;
+line-height:1.65;
+}
 </style>
 </head>
 
@@ -249,6 +271,28 @@ I enjoy building efficient, user-friendly applications and working with software
 Tracks meals by type and date using React Native and Expo Go with real-time Supabase synchronization. Transforms logged data into dynamic summaries and trend 
 visualizations for calorie and macronutrient analysis.
 </p>
+
+<div class="feature-card">
+  <h4>Recent Updates</h4>
+
+  <p>
+    Updated the date selector to clearly show both the selected date and today’s date, so users can easily track when they are viewing a past day.
+  </p>
+
+  <p>
+    Added saved nutrition overrides so when a user corrects the calories or macros for a food item, the app remembers that value and reuses it the next time the same food is logged.
+  </p>
+
+  <p>
+    Improved the Trends screen with arrow navigation on the Today tab, allowing users to review calorie totals across a 4-day daily trend.
+  </p>
+
+  <div class="row">
+    <img class="thumb" src="img/FoodTrackerUpdate3.png" loading="lazy" alt="Food tracker date selector screenshot">
+    <img class="thumb" src="img/FoodTrackerUpdate1.png" loading="lazy" alt="Saved nutrition override screenshot">
+    <img class="thumb" src="img/FoodTrackerUpdate2.png" loading="lazy" alt="Food tracker trend update screenshot">
+  </div>
+</div>
 
 </section>
 
