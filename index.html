@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Mimi Nguyen</title>
+
+<title>Mimi's Portfolio</title>
 
 <script type="text/javascript">
 (function(c,l,a,r,i,t,y){
@@ -15,216 +16,314 @@ y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet" />
+
+<link
+href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap"
+rel="stylesheet"
+/>
 
 <style>
 :root{
---ink:#2f3b4a;--muted:#516074;--brand:#2f5f8a;--brand2:#6fa8dc;
---bg1:#eef6ff;--bg2:#f9fcff;--ring:#e3f2fd;--shadow:rgba(111,168,220,.15);
---r:20px;--w:780px;--pad:44px;
+  --ink:#2f3b4a;
+  --muted:#596777;
+  --brand:#2f5f8a;
+  --brand-light:#6fa8dc;
+  --background:#f4f8fc;
+  --card:#ffffff;
+  --border:#dce8f2;
+  --width:760px;
 }
-*{box-sizing:border-box}
+
+*{
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
-margin:0;
-padding:0 14px;
-text-align:center;
-font-family:Nunito,system-ui,-apple-system,Segoe UI,Arial,sans-serif;
-color:var(--ink);
-background:linear-gradient(180deg,var(--bg1) 0%,var(--bg2) 45%,#ffffff 100%);
--webkit-text-size-adjust:100%;
-text-rendering:optimizeLegibility;
+  margin:0;
+  padding:0 14px;
+  text-align:center;
+  font-family:Nunito,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  color:var(--ink);
+  background:var(--background);
 }
 
 h1{
-margin:44px 0 10px;
-font-size:54px;
-font-weight:800;
-color:var(--brand);
+  margin:34px 0 8px;
+  font-size:46px;
+  line-height:1.1;
+  font-weight:800;
+  color:var(--brand);
 }
 
 nav{
-margin:0 auto 34px;
-max-width:900px;
-padding:0 6px;
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:10px 14px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:8px 16px;
+  margin:0 auto 28px;
 }
 
 nav a{
-color:var(--brand2);
-font-weight:700;
-text-decoration:none;
-padding:8px 10px;
-border-radius:10px;
+  padding:7px 8px;
+  color:var(--brand);
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
 }
 
 nav a:hover{
-color:var(--brand);
-text-decoration:underline;
+  text-decoration:underline;
 }
 
 main{
-max-width:var(--w);
-margin:0 auto;
-padding:var(--pad);
-background:#ffffff;
-border-radius:var(--r);
-box-shadow:0 10px 30px var(--shadow),0 0 0 1px var(--ring);
+  max-width:var(--width);
+  margin:0 auto;
+  padding:36px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:16px;
 }
 
 h2{
-margin:48px 0 16px;
-font-size:26px;
-font-weight:800;
-color:var(--brand);
+  margin:40px 0 18px;
+  color:var(--brand);
+  font-size:27px;
+  font-weight:800;
 }
 
 h2:first-of-type{
-margin-top:0;
+  margin-top:0;
 }
 
-p{
-margin:0 auto 32px;
-max-width:62ch;
-font-size:16px;
-line-height:1.75;
-color:var(--muted);
+.about-text{
+  max-width:620px;
+  margin:0 auto 34px;
+  color:var(--muted);
+  font-size:17px;
+  line-height:1.7;
 }
 
-section{
-margin-top:28px;
+.project-card{
+  margin:0 auto 28px;
+  padding:24px;
+  background:#ffffff;
+  border:1px solid var(--border);
+  border-radius:14px;
 }
 
-h3{
-margin:0 0 12px;
-font-size:20px;
-font-weight:800;
+.project-card h3{
+  margin:0 0 18px;
+  color:var(--ink);
+  font-size:23px;
+  font-weight:800;
 }
 
 .media{
-margin:12px 0 16px;
+  margin:10px 0 18px;
 }
 
 .row{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:16px;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:flex-start;
+  gap:14px;
 }
 
 img{
-display:block;
-max-width:100%;
-height:auto;
-border-radius:14px;
-cursor:pointer;
-transition:transform .2s ease;
+  display:block;
+  max-width:100%;
+  height:auto;
+  border:1px solid var(--border);
+  border-radius:10px;
+  cursor:pointer;
+  transition:opacity .2s ease;
 }
 
 img:hover{
-transform:scale(1.02);
+  opacity:.9;
 }
 
-.thumb{width:112px}
-.thumb2{width:184px;padding:6px}
-.main{width:372px;max-width:100%;margin:0 auto 12px}
+.thumb{
+  width:120px;
+}
+
+.thumb2{
+  width:160px;
+}
+
+.main-image{
+  width:340px;
+  max-width:100%;
+  margin:0 auto 12px;
+}
 
 .cta{
-margin:0 0 16px;
+  margin:0 0 16px;
 }
 
 .cta a{
-font-style:italic;
-font-weight:800;
-color:var(--brand2);
-text-decoration:none;
-cursor:pointer;
+  color:var(--brand);
+  font-size:16px;
+  font-weight:800;
+  text-decoration:none;
 }
 
 .cta a:hover{
-color:var(--brand);
-text-decoration:underline;
+  text-decoration:underline;
+}
+
+.project-description{
+  max-width:620px;
+  margin:0 auto;
+  color:var(--muted);
+  font-size:16px;
+  line-height:1.7;
+}
+
+.project-description p{
+  margin:0 0 12px;
+}
+
+.project-description p:last-child{
+  margin-bottom:0;
+}
+
+.stack{
+  font-size:15px;
+}
+
+.stack strong{
+  color:var(--ink);
 }
 
 footer{
-margin:44px 0 28px;
-font-size:14px;
-color:#7a9cc6;
+  margin:34px 0 24px;
+  color:#7289a3;
+  font-size:14px;
 }
 
 .modal{
-display:none;
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.45);
-z-index:999;
-padding:18px;
-align-items:center;
-justify-content:center;
+  display:none;
+  position:fixed;
+  inset:0;
+  z-index:999;
+  padding:18px;
+  align-items:center;
+  justify-content:center;
+  background:rgba(0,0,0,.6);
 }
 
 .modal.active{
-display:flex;
+  display:flex;
 }
 
 .modal img,
 .modal video{
-max-width:min(92vw,1100px);
-max-height:86vh;
-border-radius:18px;
-box-shadow:0 20px 60px rgba(0,0,0,.25);
-background:#000;
+  max-width:min(92vw,1050px);
+  max-height:86vh;
+  border:0;
+  border-radius:12px;
+  background:#000;
 }
 
-@media (max-width:820px){
-:root{--pad:24px}
-h1{font-size:42px;margin:30px 0 10px}
-h2{font-size:22px}
-p{font-size:15px}
-.thumb{width:96px}
-.thumb2{width:160px}
-.main{width:100%}
-.row{gap:12px}
+.modal img:hover{
+  opacity:1;
+}
+
+@media (max-width:760px){
+  h1{
+    margin-top:26px;
+    font-size:39px;
+  }
+
+  main{
+    padding:26px 20px;
+  }
+
+  h2{
+    font-size:25px;
+  }
+
+  .about-text{
+    font-size:16px;
+  }
+
+  .project-card{
+    padding:20px;
+  }
+
+  .project-card h3{
+    font-size:22px;
+  }
+
+  .project-description{
+    font-size:16px;
+  }
+
+  .thumb{
+    width:112px;
+  }
 }
 
 @media (max-width:430px){
-.row{
-flex-wrap:nowrap;
-overflow-x:auto;
-justify-content:flex-start;
-scroll-snap-type:x mandatory;
--webkit-overflow-scrolling:touch;
-padding-bottom:8px;
-}
-.row img{
-scroll-snap-align:start;
-flex:0 0 auto;
-}
-}
+  body{
+    padding:0 8px;
+  }
 
-.feature-card{
-margin:18px auto 30px;
-padding:18px;
-max-width:620px;
-background:#f7fbff;
-border:1px solid var(--ring);
-border-radius:16px;
-box-shadow:0 8px 20px var(--shadow);
-}
+  h1{
+    font-size:36px;
+  }
 
-.feature-card h4{
-margin:0 0 10px;
-font-size:17px;
-color:var(--brand);
-}
+  nav{
+    gap:4px 10px;
+    margin-bottom:22px;
+  }
 
-.feature-card p{
-margin:0 auto 16px;
-font-size:15px;
-line-height:1.65;
+  nav a{
+    font-size:15px;
+  }
+
+  main{
+    padding:22px 14px;
+  }
+
+  .project-card{
+    padding:18px 12px;
+  }
+
+  .row{
+    flex-wrap:nowrap;
+    justify-content:flex-start;
+    gap:10px;
+    overflow-x:auto;
+    padding:2px 2px 10px;
+    scroll-snap-type:x mandatory;
+    -webkit-overflow-scrolling:touch;
+  }
+
+  .row img{
+    flex:0 0 auto;
+    scroll-snap-align:start;
+  }
+
+  .thumb{
+    width:118px;
+  }
+
+  .about-text,
+  .project-description{
+    font-size:15px;
+    line-height:1.65;
+  }
+
+  .stack{
+    font-size:14px;
+  }
 }
 </style>
 </head>
@@ -234,178 +333,314 @@ line-height:1.65;
 <h1>Mimi Nguyen</h1>
 
 <nav>
-<a href="mailto:miminguyen173@gmail.com">Email</a>
-<a href="https://github.com/mimi110" target="_blank">GitHub</a>
-<a href="https://www.linkedin.com/in/miminguyen7/" target="_blank">LinkedIn</a>
-<a href="https://drive.google.com/file/d/1hEr8uEv6uaVV-s4EDmkEIiv7-lHwRBOX/view?usp=sharing" target="_blank">Resume</a>
+  <a href="mailto:miminguyen173@gmail.com">Email</a>
+
+  <a
+    href="https://github.com/mimi110"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    GitHub
+  </a>
+
+  <a
+    href="https://www.linkedin.com/in/miminguyen7/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    LinkedIn
+  </a>
+
+  <a
+    href="https://drive.google.com/file/d/1hEr8uEv6uaVV-s4EDmkEIiv7-lHwRBOX/view?usp=sharing"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Resume
+  </a>
 </nav>
 
 <main>
 
 <h2>About</h2>
 
-<p>
-Hi there! I’m a Software Developer with a Computer Science degree from the University of Houston.
-I enjoy building efficient, user-friendly applications and working with software development, data analysis, and AI.
+<p class="about-text">
+  Hi there! I’m a Software Developer with a Computer Science degree
+  from the University of Houston. I enjoy building efficient,
+  user-friendly applications and working with software development,
+  data analysis, and AI.
 </p>
 
 <h2>Projects</h2>
 
-<section id="food-tracker">
+<!-- Trigger Tracker -->
+<section id="trigger-tracker" class="project-card">
 
-<h3>Food Tracker</h3>
+  <h3>Trigger Tracker</h3>
 
-<div class="media">
-<div class="row">
-<img class="thumb" src="img/FoodTracker1.png" loading="lazy" alt="Food Tracker screenshot 3">
-<img class="thumb" src="img/FoodTracker2.png" loading="lazy" alt="Food Tracker screenshot 2">
-<img class="thumb" src="img/FoodTracker3.png" loading="lazy" alt="Food Tracker screenshot 1">
-</div>
-</div>
+  <div class="media">
+    <div class="row">
+      <img
+        class="thumb"
+        src="img/TriggerTracker1.png"
+        loading="lazy"
+        alt="Trigger Tracker calendar screen"
+      >
 
-<div class="cta">
-<a href="#" id="foodtrackerDemo">Live Demo</a>
-</div>
+      <img
+        class="thumb"
+        src="img/TriggerTracker2.png"
+        loading="lazy"
+        alt="Trigger Tracker add log screen"
+      >
 
-<p>
-Tracks meals by type and date using React Native and Expo Go with real-time Supabase synchronization. Transforms logged data into dynamic summaries and trend 
-visualizations for calorie and macronutrient analysis.
-</p>
-
-<div class="feature-card">
-  <h4>Recent Updates</h4>
-
-  <p>
-    Updated the date selector to clearly show both the selected date and today’s date, so users can easily track when they are viewing a past day.
-  </p>
-
-  <p>
-    Added saved nutrition overrides so when a user corrects the calories or macros for a food item, the app remembers that value and reuses it the next time the same food is logged.
-  </p>
-
-  <p>
-    Improved the Trends screen with arrow navigation on the Today tab, allowing users to review calorie totals across a 4-day daily trend.
-  </p>
-
-  <div class="row">
-    <img class="thumb" src="img/FoodTrackerUpdate3.png" loading="lazy" alt="Food tracker date selector screenshot">
-    <img class="thumb" src="img/FoodTrackerUpdate1.png" loading="lazy" alt="Saved nutrition override screenshot">
-    <img class="thumb" src="img/FoodTrackerUpdate2.png" loading="lazy" alt="Food tracker trend update screenshot">
+      <img
+        class="thumb"
+        src="img/TriggerTracker3.png"
+        loading="lazy"
+        alt="Trigger Tracker log details screen"
+      >
+    </div>
   </div>
-</div>
+
+  <div class="project-description">
+    <p>
+      A mobile app for tracking food, environmental, or unknown triggers
+      and their related symptoms. Users can record severity, actions
+      taken, and notes, then review, edit, or delete logs through a
+      calendar.
+    </p>
+
+    <p>
+      A future update will allow users to export their tracking data.
+    </p>
+
+    <p class="stack">
+      <strong>Built with:</strong>
+      React Native, Expo, Supabase, React Navigation, and Jest.
+    </p>
+  </div>
 
 </section>
 
-<section>
+<!-- Food Tracker -->
+<section id="food-tracker" class="project-card">
 
-<h3>Data Automation</h3>
+  <h3>Food Tracker</h3>
 
-<div class="media">
+  <div class="media">
+    <div class="row">
+      <img
+        class="thumb"
+        src="img/FoodTracker1.png"
+        loading="lazy"
+        alt="Food Tracker daily log screen"
+      >
 
-<img class="main" src="img/DataAutomation3.png" loading="lazy" alt="Data Automation screenshot 3">
+      <img
+        class="thumb"
+        src="img/FoodTracker2.png"
+        loading="lazy"
+        alt="Food Tracker nutrition summary screen"
+      >
 
-<div class="row">
-<img class="thumb2" src="img/DataAutomation2.png" loading="lazy" alt="Data Automation screenshot 2">
-<img class="thumb2" src="img/DataAutomation1.png" loading="lazy" alt="Data Automation screenshot 1">
-</div>
+      <img
+        class="thumb"
+        src="img/FoodTracker3.png"
+        loading="lazy"
+        alt="Food Tracker trends screen"
+      >
+    </div>
+  </div>
 
-</div>
+  <!-- <div class="cta">
+    <a href="#" id="foodtrackerDemo">Watch Demo</a>
+  </div> -->
 
-<div class="cta">
-<a href="https://github.com/mimi110/Data-Automation" target="_blank">View Code</a>
-</div>
+  <div class="project-description">
+    <p>
+      A mobile nutrition app that lets users log meals, snacks,
+      medications, and supplements. It tracks calories and macros,
+      displays daily summaries and trends, and uses USDA FoodData
+      Central for nutrition estimates.
+    </p>
 
-<p>
-Automates Excel data processing using Python and Pandas, with a FastAPI backend and React frontend.
-Converts complex spreadsheets into clean, organized data that is easier to understand and analyze.
-</p>
+    <p class="stack">
+      <strong>Built with:</strong>
+      React Native, Expo, Supabase, FastAPI, and Jest.
+    </p>
+  </div>
 
 </section>
+
+<!--
+Data Automation is temporarily hidden.
+
+<section id="data-automation" class="project-card">
+
+  <h3>Data Automation</h3>
+
+  <div class="media">
+
+    <img
+      class="main-image"
+      src="img/DataAutomation3.png"
+      loading="lazy"
+      alt="Data Automation application screenshot"
+    >
+
+    <div class="row">
+      <img
+        class="thumb2"
+        src="img/DataAutomation2.png"
+        loading="lazy"
+        alt="Data Automation spreadsheet screenshot"
+      >
+
+      <img
+        class="thumb2"
+        src="img/DataAutomation1.png"
+        loading="lazy"
+        alt="Data Automation results screenshot"
+      >
+    </div>
+
+  </div>
+
+  <div class="cta">
+    <a
+      href="https://github.com/mimi110/Data-Automation"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      View Code
+    </a>
+  </div>
+
+  <div class="project-description">
+    <p>
+      Automates Excel data processing using Python and Pandas,
+      with a FastAPI backend and React frontend. It converts complex
+      spreadsheets into clean, organized data that is easier to
+      understand and analyze.
+    </p>
+  </div>
+
+</section>
+-->
 
 </main>
 
 <footer>© 2026 Mimi Nguyen</footer>
 
 <div class="modal" id="m">
-<img id="mi" alt="">
-<video id="mv" controls playsinline preload="metadata">
-<source id="mvs" src="" type="video/mp4">
-</video>
+  <img id="mi" alt="Expanded project screenshot">
+
+  <video id="mv" controls playsinline preload="metadata">
+    <source id="mvs" src="" type="video/mp4">
+  </video>
 </div>
 
 <script>
-const m=document.getElementById("m")
-const mi=document.getElementById("mi")
-const mv=document.getElementById("mv")
-const mvs=document.getElementById("mvs")
+const modal = document.getElementById("m");
+const modalImage = document.getElementById("mi");
+const modalVideo = document.getElementById("mv");
+const modalVideoSource = document.getElementById("mvs");
 
-const openModalImage=(src)=>{
-mv.pause()
-mv.style.display="none"
-mvs.src=""
-mv.load()
-mi.style.display="block"
-mi.src=src
-m.classList.add("active")
-document.body.style.overflow="hidden"
+const openModalImage = (src) => {
+  modalVideo.pause();
+  modalVideo.style.display = "none";
+  modalVideoSource.src = "";
+  modalVideo.load();
+
+  modalImage.style.display = "block";
+  modalImage.src = src;
+
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+};
+
+const openModalVideo = (src) => {
+  modalImage.style.display = "none";
+  modalImage.src = "";
+
+  modalVideo.style.display = "block";
+  modalVideoSource.src = src;
+  modalVideo.load();
+
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
+};
+
+const closeModal = () => {
+  modal.classList.remove("active");
+
+  modalImage.src = "";
+
+  modalVideo.pause();
+  modalVideoSource.src = "";
+  modalVideo.load();
+
+  document.body.style.overflow = "";
+};
+
+document.querySelectorAll("main img").forEach((img) => {
+  img.addEventListener("click", () => {
+    if(typeof clarity === "function"){
+      clarity("event", "Image_Click");
+    }
+
+    openModalImage(img.src);
+  });
+});
+
+const foodTrackerDemo = document.getElementById("foodtrackerDemo");
+
+if(foodTrackerDemo){
+  foodTrackerDemo.addEventListener("click", (event) => {
+    event.preventDefault();
+    openModalVideo("file/Food%20Tracker%20Demo.mp4");
+  });
 }
 
-const openModalVideo=(src)=>{
-mi.style.display="none"
-mi.src=""
-mv.style.display="block"
-mvs.src=src
-mv.load()
-m.classList.add("active")
-document.body.style.overflow="hidden"
-}
+document.querySelectorAll("a").forEach((link) => {
+  link.addEventListener("click", () => {
+    const linkText = (link.textContent || "Link").trim();
+    const section = link.closest("section");
+    const sectionTitle =
+      section?.querySelector("h3")?.textContent?.trim();
 
-const closeModal=()=>{
-m.classList.remove("active")
-mi.src=""
-mv.pause()
-mvs.src=""
-mv.load()
-document.body.style.overflow=""
-}
+    let eventName = linkText
+      .replace(/\s+/g, "_")
+      .replace(/[^\w-]/g, "");
 
-document.querySelectorAll("main img").forEach(img=>{
-img.addEventListener("click",()=>{
-if(typeof clarity==="function"){clarity("event","Image_Click")}
-openModalImage(img.src)
-})
-})
+    if(sectionTitle){
+      eventName =
+        sectionTitle.replace(/\s+/g, "_").replace(/[^\w-]/g, "") +
+        "_" +
+        eventName +
+        "_Click";
+    }else{
+      eventName = eventName + "_Click";
+    }
 
-document.getElementById("foodtrackerDemo").addEventListener("click",(e)=>{
-e.preventDefault()
-openModalVideo("file/Food%20Tracker%20Demo.mp4")
-})
+    if(typeof clarity === "function"){
+      clarity("event", eventName);
+    }
+  });
+});
 
-document.querySelectorAll("a").forEach(link=>{
-link.addEventListener("click",()=>{
-const linkText=(link.textContent||"Link").trim()
-const section=link.closest("section")
-const sectionTitle=section?.querySelector("h3")?.textContent?.trim()
+modal.addEventListener("click", (event) => {
+  if(event.target === modal){
+    closeModal();
+  }
+});
 
-let eventName=linkText.replace(/\s+/g,"_").replace(/[^\w-]/g,"")
-
-if(sectionTitle){
-eventName=sectionTitle.replace(/\s+/g,"_").replace(/[^\w-]/g,"")+"_"+eventName+"_Click"
-}else{
-eventName=eventName+"_Click"
-}
-
-if(typeof clarity==="function"){clarity("event",eventName)}
-})
-})
-
-m.addEventListener("click",(e)=>{
-if(e.target===m)closeModal()
-})
-
-addEventListener("keydown",e=>{
-if(e.key==="Escape"&&m.classList.contains("active"))closeModal()
-})
+addEventListener("keydown", (event) => {
+  if(event.key === "Escape" && modal.classList.contains("active")){
+    closeModal();
+  }
+});
 </script>
 
 </body>
